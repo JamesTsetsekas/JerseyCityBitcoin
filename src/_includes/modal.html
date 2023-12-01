@@ -1,0 +1,18 @@
+{% if modal.enabled == true %}
+<!-- ============================================ -->
+<!--                     MODAL                    -->
+<!-- ============================================ -->
+<!-- Modal Start -->
+<div class="banner close{{ '' if modal.enabled else 'disabled' }}">
+  <div id="beta-form" name="Beta Tester Form" method="post" netlify-honeypot="bot-field" data-netlify="true">
+    <h2>{{ modal.header }}</h2>
+    <p>{{ modal.body }}</p>
+    <a href="{{ modal.buttonLinkHref }}" class="button-solid {{ '' if modal.buttonLink else 'disabled' }}"
+      target="_blank">{{ modal.buttonText if modal.buttonLink else 'disabled' }}</a>
+    <button name="close" type="button" id="close-submit"
+      class="button-solid {{ '' if modal.closeButton else 'disabled' }}"><img aria-hidden="true"
+        src="/assets/svgs/close.svg" alt="close" decoding="asynt" width="20" height="20"> Close</button>
+  </div>
+</div>
+<!-- Modal End -->
+{% endif %}
