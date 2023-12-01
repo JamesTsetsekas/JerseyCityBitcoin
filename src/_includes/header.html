@@ -9,11 +9,8 @@
       <a {% if entry.url==page.url %} class="active-menu" {% endif %} href='{{ entry.url }}'>{{
         entry.title }}</a>
       {# Add static link after the third item (index 1) #}
-      {% if loop.index == 3 %}
-      <li class="nav-li">
-        <a href="/#portfolio">Portfolio</a>
-      </li>
-      <a href="https://www.meetup.com/BitDevsNYC/">{{ item.name }}</a>
+      {% if loop.index == 4 %}
+      <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator">Meetup</a>
       {% endif %}
       {% endfor %}
     </nav>

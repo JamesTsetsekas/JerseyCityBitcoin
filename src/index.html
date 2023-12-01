@@ -37,7 +37,7 @@ eleventyNavigation:
     {%- set postCount = postCount + 1 -%}
     {%- if postCount > collections.post.length - 3 -%}
       <div class="Home-posts-post">
-        <span class="Home-posts-post-date">{{ post.date | postDate }}</span>
+        <span class="Home-posts-post-date">{{ post.date | customDate }}</span>
         <span class="Home-posts-post-arrow">&raquo;</span>
         <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
       </div>
