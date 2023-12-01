@@ -1,17 +1,20 @@
+{% set navPages = collections.all | eleventyNavigation %}
 <header class="Header">
   <div class="Header-inner">
     <div class="Header-logo">
       <a href="{{ site.github.url }}/">{{ site.data.settings.title }}</a>
     </div>
     <nav class="Header-nav">
-      {% for item in site.data.settings.menu %}
-        {% if item.external %}
-        <a href="{{ item.url }}" target="_blank" rel="noopener nofollow">
-            {{ item.name }}
-        </a>
-        {% else %}
-          <a href="{{ site.github.url }}{{ item.url }}">{{ item.name }}</a>
-        {% endif %}
+      {%- for entry in navPages %}
+      <a {% if entry.url==page.url %} class="active-menu" {% endif %} href='{{ entry.url }}'>{{
+        entry.title }}</a>
+      {# Add static link after the third item (index 1) #}
+      {% if loop.index == 3 %}
+      <li class="nav-li">
+        <a href="/#portfolio">Portfolio</a>
+      </li>
+      <a href="https://www.meetup.com/BitDevsNYC/">{{ item.name }}</a>
+      {% endif %}
       {% endfor %}
     </nav>
   </div>

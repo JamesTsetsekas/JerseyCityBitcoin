@@ -3,7 +3,7 @@ layout: 'default.html'
 description: 'Meta description for the page'
 metaTitle: 'Title that shows up on google searches'
 tagTitle: 'Pixel Perfect Websites'
-preloadCSS: '/css/_home.css'
+preloadCSS: '/css/home.css'
 permalink: '/'
 eleventyNavigation:
     key: Home
@@ -17,41 +17,33 @@ eleventyNavigation:
 
   <div class="Home-posts">
     <h2 class="Home-posts-title">Upcoming and Recent Events</h2>
-    {% set event_posts = 7 %}
-    {% set counter = 0 %}
-    {% for post in collections.all | reverse %}
-      {% if post.data.type == "socratic" or post.data.type == "whitepaper"%}
+    {% for event in events | reverse %}
+      {% if loop.index <= 7 %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ post.date | dateToFormat("MMMM D, YYYY") }}</span>
+          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
+          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
         </div>
-        {% set counter = counter + 1 %}
-        {% if counter >= event_posts %}
-          {# exit the for loop #}
-        {% endif %}
       {% endif %}
     {% endfor %}
-    <p><a href="/events.html">See all events</a></p>
+    <p><a href="/events/">See all events</a></p>
   </div>
   
+    
   <div class="Home-posts">
     <h2 class="Home-posts-title">Recent Blog Posts</h2>
-    {% set blog_posts = 3 %}
-    {% set counter = 0 %}
-    {% for post in collections.all | reverse %}
-      {% if post.data.type == "blog" %}
-        <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ post.date | dateToFormat("MMMM D, YYYY") }}</span>
-          <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
-        </div>
-        {% set counter = counter + 1 %}
-        {% if counter >= blog_posts %}
-          {# exit the for loop #}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-    <p><a href="/blog.html">See all blog posts</a></p>
-  </div>
+    {%- set postCount = 0 -%}
+    {%- for post in collections.post -%}
+    {%- set postCount = postCount + 1 -%}
+    {%- if postCount > collections.post.length - 3 -%}
+      <div class="Home-posts-post">
+        <span class="Home-posts-post-date">{{ post.date | postDate }}</span>
+        <span class="Home-posts-post-arrow">&raquo;</span>
+        <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+    <p><a href="/blog/">See all blog posts</a></p>
+  </div>  
+
 </div>

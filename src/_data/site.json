@@ -1,0 +1,12 @@
+{
+  "data": {
+    "settings": {
+      "title": "Jersey City Bitcoin",
+      "name": "Web Design",
+      "costPlan": "200",
+      "costPlanStarting": "4,000",
+      "discount": true,
+      "discountedCostPlan": "150"
+    }
+  }
+}

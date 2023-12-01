@@ -74,6 +74,27 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
 
+    // Adds custom date format filter
+    eleventyConfig.addFilter('customDate', function (dateString) {
+      const options = {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      };
+  
+      const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
+  
+      // Remove the comma after the two-digit day
+      const formattedDateWithoutComma = formattedDate.replace(',', '');
+  
+      // Split the formatted date to get day, month, and year
+      const [month, day, year] = formattedDateWithoutComma.split(' ');
+  
+      // Combine in the desired order
+      return `${day} ${month} ${year}`;
+    });
+  
+
   return {
     dir: {
       input: 'src',
