@@ -17,14 +17,10 @@ collections:
     slug: '{{pageName}}'
     fields:
       - { label: 'Page-Name-with-dashes-only', name: 'pageName', widget: 'string' }
-      - { label: 'Blog Title', name: 'blogTitle', widget: 'string', pattern: ['^.{1,50}$', 'Title must be at most 50 characters.'] }
-      - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
-      - { label: 'Description', name: 'blogDescription', widget: 'string', pattern: ['^.{1,65}$', 'Description must be at most 65 characters.'] }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
-      - { label: 'Featured Image', name: 'image', widget: 'image' }
-      - { label: 'Image Caption', name: 'imageAlt', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['event'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'events'
@@ -34,13 +30,8 @@ collections:
     slug: '{{pageName}}'
     fields:
       - { label: 'Page-Name-with-dashes-only', name: 'pageName', widget: 'string' }
-      - { label: 'Blog Title', name: 'blogTitle', widget: 'string', pattern: ['^.{1,50}$', 'Title must be at most 50 characters.'] }
-      - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
-      - { label: 'Description', name: 'blogDescription', widget: 'string', pattern: ['^.{1,65}$', 'Description must be at most 65 characters.']  }
-      - { label: 'Header', name: 'blogHeader', widget: 'string', pattern: ['^.{1,65}$', 'Description must be at most 65 characters.']  }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
-      - { label: 'Featured Image', name: 'image', widget: 'image' }
-      - { label: 'Image Caption', name: 'imageAlt', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['event'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Meetup Link', name: 'meetupLink', widget: 'string' }

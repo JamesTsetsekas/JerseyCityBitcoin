@@ -4,7 +4,7 @@ published: true
 type: blog
 title: "Contributing to the BitDevs NYC Newsletter"
 date: 2023-12-01
-
+author: "James Tsetsekas"
 ---
 
 Each month, BitDevs' community members gather and publish materials suitable for discussion at Socratic Seminar meetups [around the world](https://bitdevs.org/cities). The materials span a wide spectrum, touching on content sourced from mailing lists, code repositories, research papers, forums, blogs, newspapers, IRC logs, data aggregators and more.

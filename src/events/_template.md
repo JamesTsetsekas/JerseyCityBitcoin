@@ -1,11 +1,11 @@
 ---
 layout: post
 published: true
-type: event
+type: jcbtc
 tag: event
 title: "EVENT TEMPLATE"
-meetup: "https://www.meetup.com/your-event-link/"
 date: 2023-12-01
+meetup: "https://www.meetup.com/your-event-link/"
 ---
 <!--- TODO: remove `published: false` when creating new socratic --->
 <!--- TODO: replace meetup link with https://www.meetup.com/BitDevsNYC/events/<##replace##>/ --->

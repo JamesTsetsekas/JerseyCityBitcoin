@@ -1,10 +1,11 @@
 ---
 layout: 'post.html'
-published: true
+published: false
 type: event
 tag: event
 title: "BLOG TEMPLATE"
 date: 2023-12-01
+author: "James Tsetsekas"
 ---
 <!--- TODO: remove `published: false` when creating new blog --->
 

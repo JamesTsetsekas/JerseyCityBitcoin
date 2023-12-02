@@ -9,7 +9,7 @@
       <a {% if entry.url==page.url %} class="active-menu" {% endif %} href='{{ entry.url }}'>{{
         entry.title }}</a>
       {# Add static link after the third item (index 1) #}
-      {% if loop.index == 4 %}
+      {% if loop.index == navPages.length - 1 %}
       <a href="{{site.data.settings.meetup}}" target="_blank">Meetup</a>
       {% endif %}
       {% endfor %}

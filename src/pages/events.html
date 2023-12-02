@@ -12,23 +12,11 @@ eleventyNavigation:
   <div class="Home-posts">
     <h2 class="Home-posts-title">{{site.data.settings.title}} Meetups</h2>
     {% for event in collections.events | reverse %}
-      {% if event.data.type == "socratic" %}
+      {% if event.data.type == "jcbtc" %}
         <div class="Home-posts-post">
           <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
           <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
-        </div>
-      {% endif %}
-    {% endfor %}
-
-  <div class="Home-posts">
-    <h2 class="Home-posts-title">Whitepaper Series</h2>
-    {% for event in collections.events | reverse %}
-      {% if event.data.type == "whitepaper" %}
-        <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
-          &raquo;
-          <a class="Home-posts-post-title" href="{{ event.data.permalink }}">{{ event.data.title }}</a>
         </div>
       {% endif %}
     {% endfor %}

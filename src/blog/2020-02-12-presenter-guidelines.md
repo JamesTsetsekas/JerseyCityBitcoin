@@ -1,10 +1,11 @@
 ---
 layout: 'blog.html'
-published: true
+published: false
 type: blog
 title: "Presenter Guidelines"
 permalink: /presenter-guidelines/
 date: 2023-12-01
+author: "James Tsetsekas"
 ---
 
 We regularly host guest speakers at our Socratic Seminar events to talk about
