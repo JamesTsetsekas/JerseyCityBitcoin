@@ -12,13 +12,12 @@ eleventyNavigation:
 <div class="Home">
   <div class="Home-posts">
     <h2 class="Home-posts-title">Blog Posts</h2>
-    {% for post in site.posts %}
-      {% if post.type == "blog" %}
-        <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ post.date }}</span>
-          <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
-        </div>
-      {% endif %}
+    {% for post in collections.blog %}
+      <div class="Home-posts-post">
+        <span class="Home-posts-post-date">{{ post.date }}</span>
+        <span class="Home-posts-post-arrow">&raquo;</span>
+        <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
+      </div>
     {% endfor %}
+  </div>
 </div>

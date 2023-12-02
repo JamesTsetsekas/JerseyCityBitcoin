@@ -8,26 +8,40 @@ eleventyNavigation:
     key: Events
     order: 300
 ---
+<div class="Home-posts">
+  <h2 class="Home-posts-title">Upcoming and Recent Events</h2>
+  {% for event in events | reverse %}
+    {% if loop.index <= 7 %}
+      <div class="Home-posts-post">
+        <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
+        <span class="Home-posts-post-arrow">&raquo;</span>
+        <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
+      </div>
+      {{event.eventType}}
+    {% endif %}
+  {% endfor %}
+  <p><a href="/events/">See all events</a></p>
+</div>
 
 <div class="Home">
   <div class="Home-posts">
     <h2 class="Home-posts-title">Socratic Seminars</h2>
-    {% for post in site.posts %}
-      {% if post.type == "socratic" %}
+    {% for event in events %}
+      {% if event.eventType == "socratic" %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ post.date }}</span>
+          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
         </div>
       {% endif %}
     {% endfor %}
     <h4 class="Home-posts-subtitle">Ethereum Socratic Seminars</h4>
-    {% for post in site.posts %}
-      {% if post.type == "ethereum_socratic" %}
+    {% for event in events %}
+      {% if event.eventType == "ethereum_socratic" %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ post.date }}</span>
+          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
         </div>
       {% endif %}
     {% endfor %}
@@ -35,12 +49,12 @@ eleventyNavigation:
 
   <div class="Home-posts">
     <h2 class="Home-posts-title">Whitepaper Series</h2>
-    {% for post in site.posts %}
-      {% if post.type == "whitepaper" %}
+    {% for event in events %}
+      {% if event.eventType == "whitepaper" %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ post.date }}</span>
+          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
           &raquo;
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
         </div>
       {% endif %}
     {% endfor %}

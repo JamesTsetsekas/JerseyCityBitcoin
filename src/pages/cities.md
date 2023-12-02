@@ -1,5 +1,12 @@
 ---
 layout: 'default.html'
+description: 'Meta description for the page'
+metaTitle: 'Title that shows up on google searches'
+title: Blog Posts
+permalink: 'cities/'
+eleventyNavigation:
+    key: Cities
+    order: 600
 ---
 
 As Bitcoin has grown, so too have the local communities of like minded enthusiasts who wish to learn from one another and connect on a deeper level. Each of these communities is unique in its own way, composed of individuals from all walks of life with different ideas about what Bitcoin is and what it is not. What it can do, and what it cannot. But no matter from what lense you view Bitcoin, you cannot escape certain shared beliefs, because without them Bitcoin would not exist. One most critical is that of open source software development––"standing on the shoulder's of giants"––a principle that enables the seemingly endless chain of novel insights from which Bitcoin and its future improvements are built.

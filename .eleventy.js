@@ -2,6 +2,7 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const { DateTime } = require('luxon');
 const Image = require('@11ty/eleventy-img');
+// For Events
 const path = require('path');
 // RSS FEED
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -54,6 +55,24 @@ module.exports = function (eleventyConfig) {
   // adds the navigation plugin for easy navs
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // Add a collection for events
+  eleventyConfig.addCollection('events', function (collectionApi) {
+    // Check if inputPath is defined
+    if (!collectionApi.inputPath) {
+      console.error('Error: inputPath is undefined in collectionApi.');
+      return [];
+    }
+
+    // Construct the path to the data file using the Eleventy input directory
+    const filePath = path.join(collectionApi.inputPath, '_data', 'events.json');
+
+    // Read the content of the JSON file
+    const fileContents = require(filePath);
+
+    // Return the events data
+    return fileContents;
+  });
+
   // adds the RSS plugin
   eleventyConfig.addPlugin(pluginRss, {
     posthtmlRenderOptions: {
@@ -63,6 +82,11 @@ module.exports = function (eleventyConfig) {
   //  add contact filter which concatonates two arrays (blogs + events)
   eleventyConfig.addNunjucksFilter('concat', function (array1, array2) {
     return array1.concat(array2);
+  });
+
+  // Add Blog collection
+  eleventyConfig.addCollection('blog', function (collection) {
+    return collection.getFilteredByGlob('./src/blog/*.md');
   });
 
 
