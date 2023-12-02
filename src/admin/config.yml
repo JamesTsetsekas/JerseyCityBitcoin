@@ -22,6 +22,8 @@ collections:
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['event'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Published', name: 'published', widget: 'boolean', default: true, hint: 'Check to publish the blog post.' }
+
 
   - name: 'events'
     label: 'Events'
