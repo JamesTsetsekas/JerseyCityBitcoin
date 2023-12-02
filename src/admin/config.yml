@@ -4,7 +4,7 @@ backend:
 
 local_backend: true
 # change url to a link to the image you want to use, no file paths, must be a URL
-logo_url: http://localhost:8080/assets/images/logo-blue.png
+logo_url: http://localhost:8080/assets/images/JCBTC.jpg
 
 media_folder: 'public/images/blog'
 public_folder: '/images/blog'
@@ -16,13 +16,12 @@ collections:
     create: true
     slug: '{{pageName}}'
     fields:
-      - { label: 'Page-Name-with-dashes-only', name: 'pageName', widget: 'string' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Tags', name: 'tags', widget: 'list', default: ['event'] }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Published', name: 'published', widget: 'boolean', default: true, hint: 'Check to publish the blog post.' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['blog'] }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
 
   - name: 'events'
@@ -31,9 +30,8 @@ collections:
     create: true
     slug: '{{pageName}}'
     fields:
-      - { label: 'Page-Name-with-dashes-only', name: 'pageName', widget: 'string' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['event'] }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Meetup Link', name: 'meetupLink', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
