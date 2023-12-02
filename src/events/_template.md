@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 type: jcbtc
 tag: event
 title: "EVENT TEMPLATE"

@@ -1,13 +1,13 @@
 ---
-layout: 'blog.html'
-type: blog
-title: "test"
-permalink: /test/
-date: 2022-04-10T19:40:18.253Z
-tags:
-  - post
-  - featured
+layout: 'post.html'
+published: true
+type: event
+tag: event
+title: "Hello World!"
+date: 2023-12-02
+author: "James Tsetsekas"
 ---
+
 
 We regularly host guest speakers at our Socratic Seminar events to talk about
 technical contributions to the community. The talks  are _not_ for promoting

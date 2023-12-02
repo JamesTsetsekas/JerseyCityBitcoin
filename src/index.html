@@ -2,6 +2,7 @@
 layout: 'default.html'
 description: 'Meta description for the page'
 metaTitle: 'Title that shows up on google searches'
+title: 'Home'
 tagTitle: 'Pixel Perfect Websites'
 preloadCSS: '/css/home.css'
 permalink: '/'
@@ -34,7 +35,7 @@ eleventyNavigation:
         <div class="Home-posts-post">
           <span class="Home-posts-post-date">{{ post.data.date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ blog.url }}">{{ post.data.title }}</a>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
         </div>
       {% endif %}
     {% endfor %}

@@ -1,6 +1,6 @@
 ---
 layout: 'blog.html'
-published: true
+published: false
 type: blog
 title: "Contributing to the BitDevs NYC Newsletter"
 date: 2023-12-01
