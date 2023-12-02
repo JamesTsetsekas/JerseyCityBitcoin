@@ -10,7 +10,7 @@
         entry.title }}</a>
       {# Add static link after the third item (index 1) #}
       {% if loop.index == 4 %}
-      <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">Meetup</a>
+      <a href="{{site.data.settings.meetup}}" target="_blank">Meetup</a>
       {% endif %}
       {% endfor %}
     </nav>

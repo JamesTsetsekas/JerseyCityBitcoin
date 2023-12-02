@@ -1,8 +1,12 @@
 ---
 layout: 'blog.html'
+published: true
 type: blog
+tag: blog
 title: "Running a Great Socratic Seminar"
 permalink: /running-a-great-socratic-seminar/
+date: 2023-12-01
+
 ---
 
 In New York, we've been running a monthly [Socratic

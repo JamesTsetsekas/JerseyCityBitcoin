@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "scrape-events": "node scrape-events.js"
+    "scrape-events-api": "node scrape-events.js"
   },
   "dependencies": {
     "fs-extra": "7.0.1",

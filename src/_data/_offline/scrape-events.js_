@@ -5,25 +5,18 @@ const Turndown = require('turndown');
 
 const turndown = new Turndown();
 const LIMIT = 200; // max
-const JSON_PATH = path.resolve(__dirname, '../events.json'); // Updated path for events.json
-const POSTS_JSON_PATH = path.resolve(__dirname, '../posts.json'); // New path for posts.json
+const JSON_PATH = path.resolve(__dirname, 'events.json');
+const EVENTS_PATH = path.resolve(__dirname, '../../events');
 
 function makeEventFileName(time, title) {
   const date = new Date(time).toISOString().slice(0, 10);
-  const name = title.toLowerCase().replace(/\s/g, '-');
-  return `${date}-${name}.md`;
+  const sanitizedTitle = sanitizeFileName(title);
+  return `${date}-${sanitizedTitle}.md`;
 }
 
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-
-  return text.replace(/[&<>"']/g, (m) => map[m]);
+function sanitizeFileName(title) {
+  // Replace characters not allowed in file names with dashes
+  return title.replace(/[\\/:*?"<>|]/g, '-');
 }
 
 async function run() {
@@ -41,12 +34,6 @@ async function run() {
   }
 
   // Format and save the little buggers
-  const posts = {};
-  const counters = {
-    socratic: 1,
-    whitepaper: 1,
-  };
-
   const results = await Promise.all(events.map(async (e) => {
     // Skip events that aren't socratics or whitepapers
     if (e.name.indexOf('Socratic') === -1 && e.name.indexOf('Whitepaper') === -1) {
@@ -58,28 +45,29 @@ async function run() {
 
     // Get the fields
     const title = e.name.split('(')[0].trim();
-    const eventType = e.name.indexOf('Whitepaper') !== -1 ? 'W' + counters.whitepaper++ : 'SS' + counters.socratic++;
-    const markdown = turndown.turndown(e.description)
-      .replace(/\[masked\]/g, '');
-
-    const htmlBody = escapeHtml(markdown);
+    const eventType = e.name.indexOf('Whitepaper') !== -1 ? 'whitepaper' : 'socratic';
+    const markdown = turndown.turndown(e.description).replace(/\[masked\]/g, '');const fileName = makeEventFileName(e.time, title);
 
     // Important to not indent here, every space counts!
-    const content = {
-      layout: 'post.html',
-      type: e.name.indexOf('Whitepaper') !== -1 ? 'whitepaper' : 'socratic',
-      title: title,
-      meetup: e.link,
-      body: `<p>${htmlBody}</p>`,
-    };
+    const contents = `---
+layout: post
+type: ${eventType}
+title: "${title}"
+meetup: ${e.link}
+date: ${new Date(e.time).toISOString()}
+permalink: "events/${fileName.replace(/\.md/g, '').replace(/ /g, '-')}/"
+---
 
-    posts[eventType] = content;
+${markdown}
+`;
 
+    // Save the file to src/events
+    const filePath = makeEventFileName(e.time, title);
+    await fs.writeFile(path.join(EVENTS_PATH, filePath), contents);
     return true;
   }));
 
-  fs.writeFileSync(POSTS_JSON_PATH, JSON.stringify(posts, null, 2));
-  console.log(`Created ${results.filter(r => !!r).length} posts!`);
+  console.log(`Created ${results.filter(r => !!r).length} posts in ${EVENTS_PATH}!`);
 }
 
 run();

@@ -1,8 +1,10 @@
 ---
 layout: 'blog.html'
+published: true
 type: blog
 title: "Presenter Guidelines"
 permalink: /presenter-guidelines/
+date: 2023-12-01
 ---
 
 We regularly host guest speakers at our Socratic Seminar events to talk about

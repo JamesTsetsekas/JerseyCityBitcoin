@@ -15,6 +15,6 @@ layout: default
         </span>
       {% endif %}
     </div>
-    <div class="Post-content">{{ content }}</div>
+    <div class="Post-content">{{ content | safe }}</div>
   </div>
 </section>

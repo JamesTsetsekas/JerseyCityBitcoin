@@ -8,53 +8,27 @@ eleventyNavigation:
     key: Events
     order: 300
 ---
-<div class="Home-posts">
-  <h2 class="Home-posts-title">Upcoming and Recent Events</h2>
-  {% for event in events | reverse %}
-    {% if loop.index <= 7 %}
-      <div class="Home-posts-post">
-        <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
-        <span class="Home-posts-post-arrow">&raquo;</span>
-        <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
-      </div>
-      {{event.eventType}}
-    {% endif %}
-  {% endfor %}
-  <p><a href="/events/">See all events</a></p>
-</div>
-
 <div class="Home">
   <div class="Home-posts">
-    <h2 class="Home-posts-title">Socratic Seminars</h2>
-    {% for event in events %}
-      {% if event.eventType == "socratic" %}
+    <h2 class="Home-posts-title">{{site.data.settings.title}} Meetups</h2>
+    {% for event in collections.events | reverse %}
+      {% if event.data.type == "socratic" %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
+          <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
+          <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
         </div>
       {% endif %}
     {% endfor %}
-    <h4 class="Home-posts-subtitle">Ethereum Socratic Seminars</h4>
-    {% for event in events %}
-      {% if event.eventType == "ethereum_socratic" %}
-        <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
-          <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
 
   <div class="Home-posts">
     <h2 class="Home-posts-title">Whitepaper Series</h2>
-    {% for event in events %}
-      {% if event.eventType == "whitepaper" %}
+    {% for event in collections.events | reverse %}
+      {% if event.data.type == "whitepaper" %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
+          <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
           &raquo;
-          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
+          <a class="Home-posts-post-title" href="{{ event.data.permalink }}">{{ event.data.title }}</a>
         </div>
       {% endif %}
     {% endfor %}

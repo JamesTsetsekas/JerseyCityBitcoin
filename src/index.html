@@ -6,8 +6,6 @@ tagTitle: 'Pixel Perfect Websites'
 preloadCSS: '/css/home.css'
 permalink: '/'
 eleventyNavigation:
-    key: Home
-    order: 100
 ---
 
 <div class="Home">
@@ -17,33 +15,30 @@ eleventyNavigation:
 
   <div class="Home-posts">
     <h2 class="Home-posts-title">Upcoming and Recent Events</h2>
-    {% for event in events | reverse %}
-      {% if loop.index <= 7 %}
+    {% for event in collections.events | reverse %}
+    {% if loop.index <= 3 and event.data.published == true %}
         <div class="Home-posts-post">
-          <span class="Home-posts-post-date">{{ event.local_date | customDate }}</span>
+          <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ event.link }}">{{ event.name }}</a>
+          <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
         </div>
       {% endif %}
     {% endfor %}
     <p><a href="/events/">See all events</a></p>
   </div>
   
-    
   <div class="Home-posts">
     <h2 class="Home-posts-title">Recent Blog Posts</h2>
-    {%- set postCount = 0 -%}
-    {%- for post in collections.post -%}
-    {%- set postCount = postCount + 1 -%}
-    {%- if postCount > collections.post.length - 3 -%}
-      <div class="Home-posts-post">
-        <span class="Home-posts-post-date">{{ post.date | customDate }}</span>
-        <span class="Home-posts-post-arrow">&raquo;</span>
-        <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.data.title }}</a>
-      </div>
-      {%- endif -%}
-      {%- endfor -%}
+    {% for post in collections.blog | reverse %}
+      {% if loop.index <= 7 and post.data.published == true %}
+        <div class="Home-posts-post">
+          <span class="Home-posts-post-date">{{ post.data.date | customDate }}</span>
+          <span class="Home-posts-post-arrow">&raquo;</span>
+          <a class="Home-posts-post-title" href="{{ blog.url }}">{{ post.data.title }}</a>
+        </div>
+      {% endif %}
+    {% endfor %}
     <p><a href="/blog/">See all blog posts</a></p>
-  </div>  
+  </div>
+  
 
-</div>

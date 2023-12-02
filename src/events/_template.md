@@ -1,12 +1,14 @@
 ---
-layout: 'post.html'
+layout: post
 published: true
 type: event
 tag: event
-title: "BLOG TEMPLATE"
+title: "EVENT TEMPLATE"
+meetup: "https://www.meetup.com/your-event-link/"
 date: 2023-12-01
 ---
-<!--- TODO: remove `published: false` when creating new blog --->
+<!--- TODO: remove `published: false` when creating new socratic --->
+<!--- TODO: replace meetup link with https://www.meetup.com/BitDevsNYC/events/<##replace##>/ --->
 
 ## Announcements
 Please join us for our next Socratic Seminar. A special thank you to our sponsors [CardCoins](https://cardcoins.co), [Chaincode Labs](https://chaincode.com) and [Wolf NYC](https://wolfnyc.com) for food, refreshments and event space.

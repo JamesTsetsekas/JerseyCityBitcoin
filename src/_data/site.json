@@ -2,11 +2,10 @@
   "data": {
     "settings": {
       "title": "Jersey City Bitcoin",
-      "name": "Web Design",
-      "costPlan": "200",
-      "costPlanStarting": "4,000",
-      "discount": true,
-      "discountedCostPlan": "150"
+      "tagline": "BitDevs is a community for those interested in discussing and participating in the research and development of Bitcoin and related protocols.",
+      "github": "Jersey City Bitcoin",
+      "meetup": "https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator"
+
     }
   }
 }

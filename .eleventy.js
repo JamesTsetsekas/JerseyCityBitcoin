@@ -54,23 +54,14 @@ async function imageShortcode(src, alt, className, loading, sizes = '(max-width:
 module.exports = function (eleventyConfig) {
   // adds the navigation plugin for easy navs
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  // Add Blog collection
+  eleventyConfig.addCollection('blog', function (collection) {
+    return collection.getFilteredByGlob('./src/blog/*.md');
+  });
 
-  // Add a collection for events
-  eleventyConfig.addCollection('events', function (collectionApi) {
-    // Check if inputPath is defined
-    if (!collectionApi.inputPath) {
-      console.error('Error: inputPath is undefined in collectionApi.');
-      return [];
-    }
-
-    // Construct the path to the data file using the Eleventy input directory
-    const filePath = path.join(collectionApi.inputPath, '_data', 'events.json');
-
-    // Read the content of the JSON file
-    const fileContents = require(filePath);
-
-    // Return the events data
-    return fileContents;
+  // Add Events collection
+  eleventyConfig.addCollection('events', function (collection) {
+    return collection.getFilteredByGlob('./src/events/*.md');
   });
 
   // adds the RSS plugin
@@ -83,12 +74,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksFilter('concat', function (array1, array2) {
     return array1.concat(array2);
   });
-
-  // Add Blog collection
-  eleventyConfig.addCollection('blog', function (collection) {
-    return collection.getFilteredByGlob('./src/blog/*.md');
-  });
-
 
   // allows css, assets, robots.txt and CMS config files to be passed into /public
   eleventyConfig.addPassthroughCopy('./src/css/**/*.css');
@@ -119,15 +104,11 @@ module.exports = function (eleventyConfig) {
         month: 'short',
         year: 'numeric',
       };
-  
       const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
-  
       // Remove the comma after the two-digit day
       const formattedDateWithoutComma = formattedDate.replace(',', '');
-  
       // Split the formatted date to get day, month, and year
       const [month, day, year] = formattedDateWithoutComma.split(' ');
-  
       // Combine in the desired order
       return `${day} ${month} ${year}`;
     });

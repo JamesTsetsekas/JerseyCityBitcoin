@@ -27,9 +27,9 @@ collections:
       - { label: 'Image Caption', name: 'imageAlt', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: 'projects'
-    label: 'Projects'
-    folder: 'src/projects'
+  - name: 'events'
+    label: 'Events'
+    folder: 'src/events'
     create: true
     slug: '{{pageName}}'
     fields:
