@@ -4,7 +4,7 @@ published: true
 type: jcbtc
 tag: event
 title: "Jersey City Bitcoin Meetup #1"
-date: 2023-12-01
+date: 2023-12-14
 meetup: "https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator"
 ---
 <!--- TODO: remove `published: false` when creating new socratic --->
