@@ -6,16 +6,16 @@ layout: 'default.html'
     <h1 class="Post-title">{{ page.title }}</h1>
     <div class="Post-info">
       <span>{{ page.date | customDate }}</span>
-      {% if page.meetup %}
+      {% if meetup %}
         <span>
-          <a href="{{ page.meetup }}" target="_blank" rel="noopener nofollow">
+          <a href="{{ meetup }}" target="_blank" rel="noopener nofollow">
             Link to Meetup
           </a>
         </span>
       {% endif %}
-      {% if page.author %}
+      {% if author %}
         <span>
-          <p>{{ page.author }}</p>
+          <p>{{ author }}</p>
         </span>
       {% endif %}
     </div>
