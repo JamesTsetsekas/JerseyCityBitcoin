@@ -23,8 +23,8 @@ metadata:
     <language>{{ metadata.language }}</language>
 
     {% set allPostsAndEvents = allPosts | concat(allEvents) %}
-
     {% for post in allPostsAndEvents %}
+    {% if post.data.published != false %}
       {% set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
       <item>
         <title>{{ post.data.title }}</title>
@@ -34,6 +34,9 @@ metadata:
         <dc:creator>{{ metadata.author.name }}</dc:creator>
         <guid>{{ absolutePostUrl }}</guid>
       </item>
+    {% endif %}
     {% endfor %}
+
+
   </channel>
 </rss>
