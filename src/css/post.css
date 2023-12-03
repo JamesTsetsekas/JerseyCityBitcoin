@@ -16,4 +16,8 @@
     .Post-info > *:last-child:after {
       display: none; }
 
+img {
+  width: 70%;
+  margin: 2% 15%; }
+
 /*# sourceMappingURL=post.css.map */
