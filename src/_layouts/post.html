@@ -13,6 +13,11 @@ layout: 'default.html'
           </a>
         </span>
       {% endif %}
+      {% if page.author %}
+        <span>
+          <p>{{ page.author }}</p>
+        </span>
+      {% endif %}
     </div>
     <div class="Post-content">{{ content | safe }}</div>
   </div>
