@@ -110,8 +110,7 @@ module.exports = function (eleventyConfig) {
       // Split the formatted date to get day, month, and year
       const [month, day, year] = formattedDateWithoutComma.split(' ');
       // Combine in the desired order
-      const incrementedDay = Number(day) + 1;
-      return `${incrementedDay} ${month} ${year}`;
+      return `${day} ${month} ${year}`;
     });
   
 
