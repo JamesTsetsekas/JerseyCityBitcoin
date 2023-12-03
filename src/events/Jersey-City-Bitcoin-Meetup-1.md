@@ -11,7 +11,7 @@ meetup: "https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-7133068
 <!--- TODO: replace meetup link with https://www.meetup.com/BitDevsNYC/events/<##replace##>/ --->
 
 ## Announcements
-Please join us for our next <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Metup</a> at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> for beer, Bitcoin and thoughtful discussion.
+Please join us for our next <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Metup</a> at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> for beer, Bitcoin, and thoughtful discussion.
 
 \- 🍺 Beer 🍻  
 \- Bitcoin {% include "bitcoinemoji.html" %}  
@@ -19,4 +19,4 @@ Please join us for our next <a href="https://www.eventbrite.com/e/jersey-city-bi
 \- ❌ Shitcoins ❌  
 
 
-Althought this is not the first meetup as we have been having them monthly, this is the first time we are starting to keep count. Going foward we will be preparing loose agendas on new happenings or topics driven by suggestions from our community members. Please Join our [telegram](https://t.me/+WOiR_ajP-AgxNmMx) to partipate in setting agendas for future meetups, and contributing content to our blog.
+Although this is not the first meetup as we have been having them monthly, this is the first time we are starting to keep count. Going forward, we will be preparing loose agendas on new happenings or topics driven by suggestions from our community members. Please join our [telegram](https://t.me/+WOiR_ajP-AgxNmMx) to participate in setting agendas for future meetups and contributing content to our blog.
