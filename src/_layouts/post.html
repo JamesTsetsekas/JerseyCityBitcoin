@@ -13,7 +13,13 @@ layout: 'default.html'
           </a>
         </span>
       {% endif %}
-      {% if author %}
+      {% if authorLink %}
+      <span>
+        <a href="{{ authorLink }}" target="_blank" rel="noopener nofollow">
+          {{ author }}
+        </a>
+      </span>
+      {% elif author %}
         <span>
           <p>{{ author }}</p>
         </span>

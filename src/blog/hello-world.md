@@ -6,6 +6,7 @@ tag: event
 title: Hello World!
 date: 2023-12-02
 author: James Tsetsekas
+authorLink: https://twitter.com/JamesTsetsekas
 ---
 Hello World! 
 
