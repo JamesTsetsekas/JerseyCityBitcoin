@@ -16,4 +16,6 @@ Please join us for our next <a href="https://www.eventbrite.com/e/jersey-city-bi
 - 👂 thoughtful discussion 📢
 - ❌ shitcoins ❌
 
+<p></p>
+
  Going forward, we will be preparing loose agendas on new happenings or topics driven by suggestions from our community members. Please join our [telegram](https://t.me/+WOiR_ajP-AgxNmMx) to participate in setting agendas for future meetups and contributing content to our blog.
