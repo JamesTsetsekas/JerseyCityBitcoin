@@ -18,8 +18,8 @@ I think its only fitting, being that this is the first "hello world" blog post o
 
 "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
 
-\- Satoshi
+- Satoshi
 
 Looking forward to seeing you all at the next meetup
 
-\- Jersey City Bitcoin Meetup Team
+- Jersey City Bitcoin Meetup Team

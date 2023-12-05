@@ -6,6 +6,11 @@ const Image = require('@11ty/eleventy-img');
 const path = require('path');
 // RSS FEED
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+// Adding Sass Support
+const sass = require("sass");
+// Adding Autoprefixing and Minification with LightningCSS
+const browserslist = require("browserslist");
+const { transform, browserslistToTargets } = require("lightningcss");
 
 // allows the use of {% image... %} to create responsive, optimised images
 // CHANGE DEFAULT MEDIA QUERIES AND WIDTHS
@@ -52,6 +57,42 @@ async function imageShortcode(src, alt, className, loading, sizes = '(max-width:
 }
 
 module.exports = function (eleventyConfig) {
+  // Recognize Sass as a "template languages"
+  eleventyConfig.addTemplateFormats("scss");
+  // Compile Sass
+  eleventyConfig.addExtension("scss", {
+    outputFileExtension: "css",
+    compile: async function (inputContent, inputPath) {
+      // Skip files like _fileName.scss
+      let parsed = path.parse(inputPath);
+      if (parsed.name.startsWith("_")) {
+        return;
+      }
+
+      // Run file content through Sass
+      let result = sass.compileString(inputContent, {
+        loadPaths: [parsed.dir || "."],
+        sourceMap: false, // or true, your choice!
+      });
+
+      // Allow included files from @use or @import to
+      // trigger rebuilds when using --incremental
+      this.addDependencies(inputPath, result.loadedUrls);
+
+      let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
+
+      return async () => {
+        let { code } = await transform({
+          code: Buffer.from(result.css),
+          minify: true,
+          sourceMap: false,
+          targets,
+        });
+        return code;
+      };
+    },
+  });
+
   // adds the navigation plugin for easy navs
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   // Add Blog collection
