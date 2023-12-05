@@ -2,7 +2,7 @@
 meetup: https://twitter.com/PubKey_NYC/status/1730672584033698185
 layout: post
 published: true
-title: "LNZUES Launch Party @ Pubkey"
+title: "LNZEUS Launch Party @ Pubkey"
 date: 2023-12-08
 type: other
 tag: event
@@ -18,4 +18,4 @@ USE ZEUS. BECOME A GOD.
 
 🧡🍻🙏
 
-LNZUES Launch Party @ Pubkey Friday, December 8, 2023 at 6:00 PM 6PM Details [here](https://twitter.com/PubKey_NYC/status/1730672584033698185)
+LNZEUS Launch Party @ Pubkey Friday, December 8, 2023 at 6:00 PM 6PM Details [here](https://twitter.com/PubKey_NYC/status/1730672584033698185)
