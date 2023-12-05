@@ -44,3 +44,24 @@ $large-screen: 1024px;
   width: 70%;
   margin: 2% 15%;
  }
+//   Bitcoin Emojis
+ .bitcoinEmoji {
+  -webkit-text-size-adjust: 100%;
+  pointer-events: auto;
+  font: inherit;
+  list-style: none;
+  text-align: inherit;
+  white-space: nowrap;
+  font-family: inherit;
+  word-wrap: break-word;
+  -webkit-user-drag: none;
+  display: inline-block;
+  vertical-align: -20%;
+  margin-left: 2px;
+  height: 1.2em;
+  width: 1.2em;
+  margin-right: 0.075em;
+  line-height: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
