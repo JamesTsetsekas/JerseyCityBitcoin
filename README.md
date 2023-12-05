@@ -18,5 +18,8 @@ Create a .md markdown or .html file inside src\pages
 ### emojis
 Use {% include "bitcoinemoji.html" %} and / or  {% include "bitcoinlogo.html" %} to include bitcoin emojis
 
-####
+### Testing
 you can use src\blog\test.md for testing, it is currently set to published: false but if you go do http://<yourdomain>:8080/blog/test you can see this test page
+
+### Known issues
+When running locally date is off by -1 but when deploying to netlify the date is correct. not sure whats up with this, if you think you can figure it out please take a shot via a pull request.
