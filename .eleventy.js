@@ -13,6 +13,7 @@ const browserslist = require("browserslist");
 // lightningcss
 const { transform, browserslistToTargets } = require("lightningcss");
 
+
 // allows the use of {% image... %} to create responsive, optimised images
 // CHANGE DEFAULT MEDIA QUERIES AND WIDTHS
 async function imageShortcode(src, alt, className, loading, sizes = '(max-width: 600px) 400px, 850px') {
