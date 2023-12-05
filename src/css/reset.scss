@@ -35,7 +35,7 @@ ol, ul {
 	padding-left: 2ch;
 }
 li:before {
-    content: "* ";
+    content: "- " !important;
 }
 blockquote, q {
 	quotes: none;
