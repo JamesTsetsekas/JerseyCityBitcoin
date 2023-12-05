@@ -1,0 +1,57 @@
+html, body {
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #FFF;
+  color: #333; }
+  @media (max-width: 1024px) {
+    html, body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    html, body {
+      font-size: 13px; } }
+  @media (max-width: 400px) {
+    html, body {
+      font-size: 12px; } }
+
+.Site {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2rem; }
+
+a {
+  color: #FF9900;
+  text-decoration: none; }
+  a:hover {
+    color: rgba(255, 153, 0, 0.8); }
+
+p {
+  margin-bottom: 1rem; }
+
+h1, h2, h3 {
+  font-weight: bold; }
+
+h4, h5, h6 {
+  font-weight: bolder; }
+
+h1 {
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem; }
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
+
+/*# sourceMappingURL=global.css.map */

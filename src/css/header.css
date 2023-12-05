@@ -1,0 +1,31 @@
+.Header {
+  margin-bottom: 0.75rem; }
+  .Header-border {
+    opacity: 0.4;
+    margin-top: 0.4rem;
+    overflow: hidden;
+    user-select: none; }
+  .Header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .Header-logo {
+    font-size: 2.2rem; }
+    @media (max-width: 400px) {
+      .Header-logo {
+        font-size: 1.8rem; } }
+  .Header-nav {
+    display: flex;
+    font-size: 1.3rem; }
+    @media (max-width: 400px) {
+      .Header-nav {
+        font-size: 1.1rem; } }
+    .Header-nav a {
+      color: #333;
+      opacity: 0.4;
+      margin-left: 1.5rem; }
+      .Header-nav a:hover {
+        color: #FF9900;
+        opacity: 1; }
+
+/*# sourceMappingURL=header.css.map */

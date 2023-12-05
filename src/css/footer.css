@@ -1,0 +1,18 @@
+.Footer {
+  margin-top: 2rem; }
+  .Footer-border {
+    opacity: 0.4;
+    margin-bottom: 1em;
+    overflow: hidden;
+    user-select: none; }
+  .Footer-inner {
+    display: flex;
+    justify-content: space-between; }
+    .Footer-inner a {
+      color: #333;
+      opacity: 0.4; }
+      .Footer-inner a:hover {
+        color: #FF9900;
+        opacity: 1; }
+
+/*# sourceMappingURL=footer.css.map */

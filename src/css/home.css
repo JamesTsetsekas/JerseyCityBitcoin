@@ -1,0 +1,21 @@
+.Home-about {
+  font-size: 1.2rem; }
+.Home-posts {
+  margin-bottom: 4rem; }
+  .Home-posts:last-child {
+    margin-bottom: 0; }
+  .Home-posts-subtitle {
+    margin-top: 2rem; }
+  .Home-posts-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold; }
+  .Home-posts-post {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem; }
+    .Home-posts-post-date {
+      opacity: 0.8; }
+    .Home-posts-post-arrow {
+      opacity: 0.5; }
+
+/*# sourceMappingURL=home.css.map */
