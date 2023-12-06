@@ -1,5 +1,5 @@
   console.log(
-    "Wow, look at you checking the console you must be a 1337 H4x0r! For fun try entering the Konami Code! on your keyboard ↑ ↑ ↓ ↓ ← → ← → b a Enter."
+    "Wow, look at you checking the console you must be a 1337 H4x0r! Type:'satoshi'."
   );
   ("use strict");
 
@@ -29,44 +29,10 @@
 
     var colorThemes = [
       function () {
-        return color(
-          (200 * random()) | 0,
-          (200 * random()) | 0,
-          (200 * random()) | 0
-        );
-      },
-      function () {
-        var black = (200 * random()) | 0;
-        return color(200, black, black);
-      },
-      function () {
-        var black = (200 * random()) | 0;
-        return color(black, 200, black);
-      },
-      function () {
-        var black = (200 * random()) | 0;
-        return color(black, black, 200);
-      },
-      function () {
-        return color(200, 100, (200 * random()) | 0);
-      },
-      function () {
-        return color((200 * random()) | 0, 200, 200);
-      },
-      function () {
-        var black = (256 * random()) | 0;
-        return color(black, black, black);
-      },
-      function () {
-        return colorThemes[random() < 0.5 ? 1 : 2]();
-      },
-      function () {
-        return colorThemes[random() < 0.5 ? 3 : 5]();
-      },
-      function () {
-        return colorThemes[random() < 0.5 ? 2 : 4]();
+        return "#F7931A"; // Set the color to #F7931A
       },
     ];
+
     function color(r, g, b) {
       return "rgb(" + r + "," + g + "," + b + ")";
     }
@@ -244,26 +210,22 @@
     }
 
     // Konami code sequence
-    const konamiCode = [
-      "ArrowUp",
-      "ArrowUp",
-      "ArrowDown",
-      "ArrowDown",
-      "ArrowLeft",
-      "ArrowRight",
-      "ArrowLeft",
-      "ArrowRight",
-      "b",
+    const satoshi = [
+      "s",
       "a",
-      "Enter",
+      "t",
+      "o",
+      "s",
+      "h",
+      "i",
     ];
     let konamiIndex = 0;
 
     // Event listener for key presses
     document.addEventListener("keydown", function (event) {
-      if (event.key === konamiCode[konamiIndex]) {
+      if (event.key === satoshi[konamiIndex]) {
         konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
+        if (konamiIndex === satoshi.length) {
           // Run your code when Konami code is entered
           poof();
           konamiIndex = 0; // Reset index for potential future uses
