@@ -132,28 +132,24 @@ module.exports = function (eleventyConfig) {
   // allows the {% image %} shortcode to be used for optimised iamges (in webp if possible)
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
-  // normally, 11ty will render dates on blog posts in full JSDate format (Fri Dec 02 18:00:00 GMT-0600). That's ugly
-  // this filter allows dates to be converted into a normal, locale format. view the docs to learn more (https://moment.github.io/luxon/api-docs/index.html#datetime)
-  eleventyConfig.addFilter('postDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  // Adds custom date format filter
+  eleventyConfig.addFilter('customDate', function (dateString) {
+    const options = {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    };
+    const formattedDate = new Intl.DateTimeFormat('en-US', {
+      ...options,
+      timeZone: 'UTC',
+    }).format(new Date(dateString));
+  
+    const formattedDateWithoutComma = formattedDate.replace(',', '');
+    const [month, day, year] = formattedDateWithoutComma.split(' ');
+  
+    return `${day} ${month} ${year}`;
   });
 
-    // Adds custom date format filter
-    eleventyConfig.addFilter('customDate', function (dateString) {
-      const options = {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-      };
-      const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
-      // Remove the comma after the two-digit day
-      const formattedDateWithoutComma = formattedDate.replace(',', '');
-      // Split the formatted date to get day, month, and year
-      const [month, day, year] = formattedDateWithoutComma.split(' ');
-      // Combine in the desired order
-      return `${day} ${month} ${year}`;
-    });
-  
 
   return {
     dir: {
