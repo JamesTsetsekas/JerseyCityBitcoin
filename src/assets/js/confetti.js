@@ -209,7 +209,7 @@
       }
     }
 
-    // Konami code sequence
+    // satoshi code sequence
     const satoshi = [
       "s",
       "a",
@@ -219,19 +219,19 @@
       "h",
       "i",
     ];
-    let konamiIndex = 0;
+    let satoshiIndex = 0;
 
     // Event listener for key presses
     document.addEventListener("keydown", function (event) {
-      if (event.key === satoshi[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === satoshi.length) {
-          // Run your code when Konami code is entered
+      if (event.key === satoshi[satoshiIndex]) {
+        satoshiIndex++;
+        if (satoshiIndex === satoshi.length) {
+          // Run your code when satoshi code is entered
           poof();
-          konamiIndex = 0; // Reset index for potential future uses
+          satoshiIndex = 0; // Reset index for potential future uses
         }
       } else {
-        konamiIndex = 0; // Reset index if incorrect key is pressed
+        satoshiIndex = 0; // Reset index if incorrect key is pressed
       }
     });
   };
