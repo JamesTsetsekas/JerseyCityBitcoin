@@ -1,0 +1,39 @@
+---
+layout: 'default.html'
+description: 'Bitcoin Price'
+metaTitle: 'Bitcoin Price'
+title: Bitcoin Price
+permalink: 'price/'
+eleventyNavigation:
+key: Price
+order: 700
+---
+<style>
+    .tradingview-widget-copyright{
+        display: none;
+    }
+</style>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_74720"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": "980",
+  "height": "610",
+  "symbol": "BITSTAMP:BTCUSD",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_74720"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->

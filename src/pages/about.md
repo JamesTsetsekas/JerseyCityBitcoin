@@ -1,7 +1,7 @@
 ---
 layout: 'default.html'
-description: 'Meta description for the page'
-metaTitle: 'Title that shows up on google searches'
+description: 'About Jersey City Bitcoin'
+metaTitle: 'About Jersey City Bitcoin'
 title: About
 permalink: 'about/'
 eleventyNavigation:
