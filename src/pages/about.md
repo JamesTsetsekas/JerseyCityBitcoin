@@ -2,6 +2,7 @@
 layout: 'default.html'
 description: 'Meta description for the page'
 metaTitle: 'Title that shows up on google searches'
+title: About
 permalink: 'about/'
 eleventyNavigation:
     key: About

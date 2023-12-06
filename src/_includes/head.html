@@ -1,10 +1,10 @@
 <head>
 
   <title>
-    {% if page.title == "Home" %}
-      {{ site.data.settings.title }} | {{ site.data.settings.tagline }}
-    {% else %}
+    {% if title == "Home" %}
       {{ site.data.settings.title }}
+    {% else %}
+      {{ title }} | {{ site.data.settings.tagline }}
     {% endif %}
   </title>
 
