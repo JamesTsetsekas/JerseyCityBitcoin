@@ -58,6 +58,10 @@ form[name="contact"] .hidden {
   justify-content: center;
 }
 
+.margin {
+  margin: 100px 0;
+}
+
 </style>
 <form name="contact" method="POST" data-netlify-recaptcha="true" netlify-honeypot="bot-field" data-netlify="true">
   <p class="hidden">
@@ -85,7 +89,7 @@ form[name="contact"] .hidden {
       Message: <textarea name="message"></textarea>
     </label>
   </p>
-  <div class="flex center"><div data-netlify-recaptcha="true"></div></div>
+  <div class="flex center margin"><div data-netlify-recaptcha="true"></div></div>
   <div class="flex center">
     <p>
       <button type="submit">Send</button>
