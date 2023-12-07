@@ -10,7 +10,7 @@ eleventyNavigation:
 ---
 ### About Jersey City Bitcoin
 
-Jersey City Bitcoin is a decentralized community for those interested in meeting up to discuss, and learn more about bitcoin in the Jersey City, New Jersey / New York area. You can be well versed or new, all are welcome.
+Jersey City Bitcoin is a decentralized community for those interested in meeting up to discuss, and learn more about bitcoin in the Jersey City, New Jersey / New York area. You can be well versed or new, all are welcome. You can contact us [here](/contact-us/).
 
 Follow us on:  
 - <a href="https://twitter.com/JerseyCityBTC" target="_blank">Twitter</a>
