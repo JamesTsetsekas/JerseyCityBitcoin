@@ -19,3 +19,34 @@ $large-screen: 1024px;
 @import './home';
 @import './post';
 @import './blog';
+
+::selection {
+    background: $primary-color;
+    /* WebKit/Blink Browsers */
+    color: #fff;
+}
+
+::-moz-selection {
+    background: $primary-color;
+    /* Gecko Browsers */
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 7.5px;
+    height: 7.5px;
+    background-color: $primary-color;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #f0f0f0;
+}
+
+body.dark-mode ::-webkit-scrollbar-track-piece {
+    background-color: #999;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $primary-color;
+}
