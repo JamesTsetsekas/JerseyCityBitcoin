@@ -19,3 +19,5 @@ Please join us for our next <a href="https://www.eventbrite.com/e/jersey-city-bi
 <p></p>
 
  Going forward, we will be preparing loose agendas on new happenings or topics driven by suggestions from our community members. Please join our [telegram](https://t.me/+WOiR_ajP-AgxNmMx) to participate in setting agendas for future meetups and contributing content to our blog.
+
+ <p>P.S. We will be crashing the <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">Bitdevs NYC Socratic Seminar 131</a> after-party at a <a href="https://pubkey.bar/" target="_blank">PUBKEY</a> around 9:30PM</p>
