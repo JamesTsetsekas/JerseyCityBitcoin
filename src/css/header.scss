@@ -20,6 +20,8 @@ $large-screen: 1024px;
     margin-top: 0.4rem;
     overflow: hidden;
     user-select: none;
+    text-wrap: nowrap;
+    text-align: center;
   }
 
   &-inner {
