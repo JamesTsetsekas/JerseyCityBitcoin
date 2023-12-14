@@ -65,12 +65,8 @@ form[name="contact"] .hidden {
 
 </style>
 <form name="contact" method="POST" data-netlify-recaptcha="true" netlify-honeypot="bot-field" data-netlify="true" action="/success/">
-  <p class="hidden">
-    <label>
-      Don’t fill this out if you’re human: <input name="bot-field" />
-    </label>
-  </p>
-  <p>
+    <input type='hidden' name="bot-field" />
+    <input type='hidden' id='userIp' name='userIp' />
     <label>
       Name: <input type="text" name="name" />
     </label>
@@ -97,3 +93,15 @@ form[name="contact"] .hidden {
     </p>
 </div>
 </form>
+<script>
+  // Fetch the user's IP address from ipify
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      // Update the value of the hidden input with the user's IP address
+      document.getElementById('userIp').value = data.ip;
+    })
+    .catch(error => {
+      console.error('Error fetching IP address:', error);
+    });
+</script>
