@@ -18,4 +18,4 @@ USE ZEUS. BECOME A GOD.
 
 🧡🍻🙏
 
-LNZEUS Launch Party @ Pubkey Friday, December 8, 2023 at 6:00 PM 6PM Details [here](https://twitter.com/PubKey_NYC/status/1730672584033698185)
+LNZEUS Launch Party @  <a href="https://www.google.com/maps/search/?api=1&query=40.73222%2C%20-74.00002" target="_blank">Pubkey</a>  Friday, December 8, 2023 at 6:00 PM  Details <a href="https://twitter.com/PubKey_NYC/status/1730672584033698185" target="_blank">here</a>.
