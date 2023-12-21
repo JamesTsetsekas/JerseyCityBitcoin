@@ -2,7 +2,7 @@
 layout: 'default.html'
 ---
 
-BitDevs is a community for those interested in discussing and participating in
+Jersey City Bitcoin is a community for those interested in discussing and participating in
 the research and development of Bitcoin and related protocols. You can be well
 versed with or new to the topics, all are welcome. Be advised: discussion will
 be technical.
