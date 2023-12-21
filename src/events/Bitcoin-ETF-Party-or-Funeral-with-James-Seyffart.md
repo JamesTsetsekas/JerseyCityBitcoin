@@ -3,7 +3,7 @@ meetup: https://twitter.com/PubKey_NYC/status/1730672584033698185
 layout: post
 published: true
 title: "Bitcoin ETF Party or Funeral with James Seyffart"
-date: 2023-12-21
+date: 2024-01-11
 type: other
 tag: event
 ---

@@ -2,8 +2,8 @@
 meetup: https://www.meetup.com/pubkey-meetups/events/297978803/
 layout: post
 published: true
-title: "Bitcoin ETF Party or Funeral with James Seyffart"
-date: 2024-01-11
+title: "Bitcoin Year in Review w Marty Bent"
+date: 2023-12-21
 type: other
 tag: event
 ---
