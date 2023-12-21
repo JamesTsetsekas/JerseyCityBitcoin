@@ -2,7 +2,7 @@
 meetup: https://twitter.com/PubKey_NYC/status/1730672584033698185
 layout: post
 published: true
-title: "Bitcoin Year in Review w Marty Bent"
+title: "Bitcoin ETF Party or Funeral with James Seyffart"
 date: 2023-12-21
 type: other
 tag: event
