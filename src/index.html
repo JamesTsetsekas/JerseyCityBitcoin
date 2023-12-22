@@ -19,7 +19,7 @@ eleventyNavigation:
     <h2 class="Home-posts-title">{{site.data.settings.title}} Meetups</h2>
     {% for event in collections.events | reverse %}
     {% if loop.index <= 10 and event.data.type=="jcbtc" and event.data.published !=false %} <div class="Home-posts-post">
-      <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
+      <span class="Home-posts-post-date event-date">{{ event.date | customDate }}</span>
       <span class="Home-posts-post-arrow">&raquo;</span>
       <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
       {% endif %}
@@ -30,7 +30,7 @@ eleventyNavigation:
     <h2 class="Home-posts-title">Other Local Events</h2>
     {% for event in collections.events | reverse %}
     {% if loop.index <= 10 and event.data.type !="jcbtc" and event.data.published !=false %} <div class="Home-posts-post">
-      <span class="Home-posts-post-date">{{ event.date | customDate }}</span>
+      <span class="Home-posts-post-date event-date">{{ event.date | customDate }}</span>
       <span class="Home-posts-post-arrow">&raquo;</span>
       <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
       {% endif %}
@@ -50,3 +50,23 @@ eleventyNavigation:
       <p><a href="/blog/">See all blog posts</a></p>
   </div>
 </div>
+
+<script>
+  // Get all elements with the class 'event-date'
+  var dateElements = document.querySelectorAll('.event-date');
+
+  // Loop through each element and apply the logic
+  dateElements.forEach(function(element) {
+    var dateString = element.textContent;
+    var eventDate = new Date(dateString);
+
+    // Offset the current date by one day
+    var currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1);
+
+    // Check if the event date is in the past
+    if (eventDate < currentDate) {
+      element.classList.add('past-event');
+    }
+  });
+</script>
