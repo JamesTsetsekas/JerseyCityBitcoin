@@ -1,5 +1,5 @@
 ---
-meetup: https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator
+meetup: https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-783256570487?aff=oddtdtcreator
 layout: post
 published: true
 title: "Jersey City Bitcoin Meetup #14"
@@ -9,7 +9,7 @@ tag: event
 ---
 ## Announcements
 
-Please join us for <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Metup #14</a> of 2024! at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> on Thursday, January 25 7 - 9pm EST for beer, Bitcoin, and thoughtful discussion.
+Please join us for <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-783256570487?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Metup #14</a> of 2024! at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> on Thursday, January 25 7 - 9pm EST for beer, Bitcoin, and thoughtful discussion.
 
 - 🍺 beer 🍻
 - {% include "bitcoinemoji.html" %} Bitcoin {% include "bitcoinlogo.html" %}
