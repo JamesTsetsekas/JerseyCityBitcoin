@@ -18,7 +18,7 @@ eleventyNavigation:
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 500px;
+  width: 500%;
   background-color: black;
   color: #fff;
   text-align: center;
