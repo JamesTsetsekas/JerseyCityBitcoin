@@ -18,7 +18,7 @@ eleventyNavigation:
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 200px;
+  width: 500px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -36,9 +36,15 @@ eleventyNavigation:
 }
 
 .tooltiptext img {
-    width: 80%;
+    height: 95%;
+    width: 95%;
     margin: auto;
 }
+
+.tooltiptext {
+  font-size: 12px;
+  text-wrap: wrap;
+ }
 </style>
 ### About Jersey City Bitcoin
 
@@ -47,7 +53,7 @@ Jersey City Bitcoin is a decentralized community for those interested in meeting
 Follow us on:  
 - <a href="https://twitter.com/JerseyCityBTC" target="_blank">Twitter</a>
 - <div class="tooltip"><a href="/assets/images/npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2.png" target="_blank">NOSTR NPUB</a>
-  <span class="tooltiptext"><img src="/assets/images/npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2.png" alt="NOSTR npub" /></span></div>
+  <span class="tooltiptext"><br><span class="npubstring" >npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2<span><img src="/assets/images/npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2.png" alt="NOSTR npub" /></span></div>
 - <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">eventbrite</a>
 - <a href="https://t.me/+gUMTekJz7PM3MzZh" target="_blank">Telegram</a>
 
