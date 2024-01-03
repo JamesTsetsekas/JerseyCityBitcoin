@@ -20,8 +20,20 @@ permalink: 'success/'
             <p>Thank You! Your submission has been received!</p>
             <p class=" alert alert-dark " role=" alert">
                 <span class="text-center"><small>Return to <a
-                            href="https://{{client.domain}}/">{{client.name}}</a></small></span>
+                            href="https://{{client.domain}}/">{{client.name}}</a> you will be automatically redirected in <span class="redirectTimer">5</span>.</small></span>
             </p>
         </form>
     </div>
 </section>
+<script>
+    // Countdown timer and redirect
+    let redirectTimer = 5;
+    setInterval(function () {
+        redirectTimer--;
+        document.querySelector('.redirectTimer').innerText = redirectTimer;
+
+        if (redirectTimer === 0) {
+            window.location.href = "https://{{client.domain}}/";
+        }
+    }, 1000);
+</script>
