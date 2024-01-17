@@ -1,5 +1,5 @@
 ---
-meetup: https://www.meetup.com/pubkey-meetups/events/297987909
+meetup: https://www.meetup.com/pubkey-meetups/events/298205574
 layout: post
 published: true
 title: "⚡Lightning Monthly⚡"
