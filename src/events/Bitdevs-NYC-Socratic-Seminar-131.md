@@ -9,7 +9,7 @@ tag: event
 ---
 
 
-You must RSVP here to attend <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">Bitdevs NYC Socratic Seminar 131</a>
+You must RSVP here to attend <a href="https://www.meetup.com/bitdevsnyc/events/297823600/" target="_blank">Bitdevs NYC Socratic Seminar 131</a>
 
 Location: <a href="https://www.google.com/maps/search/?api=1&query=40.75329%2C%20-73.975426" target="_blank">Chaincode Labs 450 Lexington Ave, 38th Floor New York, ny</a>
 
