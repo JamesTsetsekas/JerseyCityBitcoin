@@ -11,7 +11,7 @@ RSVPs required! You *MUST* put your first and last name in the RSVP questionnair
 
 If you can't make it to the main event please join us for the after-party at <a href="https://theperfectpintnyc.com/east-midtown-nyc/" target="_blank">The Perfect Pint East</a> around 9:30PM. This bar is very close to Chaincode Labs at 203 East 45th Street 10017. Thanks to our friends at <a href="https://chaincode.com/" target="_blank">Chaincode Labs</a> and <a href="https://wolfnyc.com/" target="_blank">Wolf</a> for food, refreshments and event space.
 
-If this is your first time, please read about our Socratic Seminar series <a href="https://wolfnyc.com/" target="_blank">here</a>. Our topic list will be available closer to the event on <a href="https://bitdevs.org/" target="_blank">bitdevs.org</a>.
+If this is your first time, please read about our Socratic Seminar series <a href="https://bitdevs.org/about" target="_blank">here</a>. Our topic list will be available closer to the event on <a href="https://bitdevs.org/" target="_blank">bitdevs.org</a>.
 
 Please make topic suggestions <a href="https://github.com/BitDevsNYC/BitDevsNYC.github.io/issues/150" target="_blank">here</a>.
 
