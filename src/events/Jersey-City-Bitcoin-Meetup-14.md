@@ -13,7 +13,7 @@ tag: event
 
 I will not be attending and not sure on the headcount for the JC BTC meetup but members are more than welcome to attend althought im not sure who will be attending and what the headcount is, i will be going to Bitdevs + after-party at The Perfect Pint East. Please join our [telegram](https://t.me/+WOiR_ajP-AgxNmMx) for updates
 
-Please join us for <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-783256570487?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Metup #14</a> of 2024! at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> on Thursday, January 25 7 - 9pm EST for beer, Bitcoin, and thoughtful discussion.
+Please join us for <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-783256570487?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin meetup #14</a> of 2024! at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> on Thursday, January 25 7 - 9pm EST for beer, Bitcoin, and thoughtful discussion.
 
 - 🍺 beer 🍻
 - {% include "bitcoinemoji.html" %} Bitcoin {% include "bitcoinlogo.html" %}
