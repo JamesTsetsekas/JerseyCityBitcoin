@@ -234,4 +234,30 @@
         satoshiIndex = 0; // Reset index if incorrect key is pressed
       }
     });
+
+      const fetchBitcoinPrice = async () => {
+        try {
+          const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+          const data = await response.json();
+          const price = data.bitcoin.usd;
+      
+          // Replace the following lines with your desired logic for handling the price data
+          // console.log('Bitcoin Price:', price);
+      
+          if (price > 100000) {
+            // Replace this with your logic for handling Bitcoin price greater than 100000
+            // console.log('Bitcoin price is greater than $100,000');
+            poof();
+            
+          } else {
+            // Replace this with your logic for handling Bitcoin price less than or equal to 100000
+            // console.log('Bitcoin price is less than or equal to $100,000');
+          }
+        } catch (error) {
+          // console.error('Error fetching bitcoin price:', error);
+        }
+      };
+      
+      // Call the function to fetch Bitcoin price
+      fetchBitcoinPrice();
   };
