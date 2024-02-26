@@ -1,263 +1,263 @@
-  console.log(
-    "Wow, look at you checking the console you must be a 1337 H4x0r! Type:'satoshi'."
-  );
-  ("use strict");
+console.log(
+  "Wow, look at you checking the console you must be a 1337 H4x0r! Type:'satoshi'."
+);
+("use strict");
 
-  window.onload = function () {
-    // Globals
-    var random = Math.random,
-      cos = Math.cos,
-      sin = Math.sin,
-      PI = Math.PI,
-      PI2 = PI * 2,
-      timer = undefined,
-      frame = undefined,
-      confetti = [];
+window.onload = function () {
+  // Globals
+  var random = Math.random,
+    cos = Math.cos,
+    sin = Math.sin,
+    PI = Math.PI,
+    PI2 = PI * 2,
+    timer = undefined,
+    frame = undefined,
+    confetti = [];
 
-    var particles = 10,
-      spread = 40,
-      sizeMin = 3,
-      sizeMax = 12 - sizeMin,
-      eccentricity = 10,
-      deviation = 100,
-      dxThetaMin = -0.1,
-      dxThetaMax = -dxThetaMin - dxThetaMin,
-      dyMin = 0.13,
-      dyMax = 0.18,
-      dThetaMin = 0.4,
-      dThetaMax = 0.7 - dThetaMin;
+  var particles = 10,
+    spread = 40,
+    sizeMin = 3,
+    sizeMax = 12 - sizeMin,
+    eccentricity = 10,
+    deviation = 100,
+    dxThetaMin = -0.1,
+    dxThetaMax = -dxThetaMin - dxThetaMin,
+    dyMin = 0.13,
+    dyMax = 0.18,
+    dThetaMin = 0.4,
+    dThetaMax = 0.7 - dThetaMin;
 
-    var colorThemes = [
-      function () {
-        return "#F7931A"; // Set the color to #F7931A
-      },
-    ];
+  var colorThemes = [
+    function () {
+      return "#F7931A"; // Set the color to #F7931A
+    },
+  ];
 
-    function color(r, g, b) {
-      return "rgb(" + r + "," + g + "," + b + ")";
-    }
+  function color(r, g, b) {
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
 
-    // Cosine interpolation
-    function interpolation(a, b, t) {
-      return ((1 - cos(PI * t)) / 2) * (b - a) + a;
-    }
+  // Cosine interpolation
+  function interpolation(a, b, t) {
+    return ((1 - cos(PI * t)) / 2) * (b - a) + a;
+  }
 
-    // Create a 1D Maximal Poisson Disc over [0, 1]
-    var radius = 1 / eccentricity,
-      radius2 = radius + radius;
-    function createPoisson() {
-      // domain is the set of points which are still available to pick from
-      // D = union{ [d_i, d_i+1] | i is even }
-      var domain = [radius, 1 - radius],
-        measure = 1 - radius2,
-        spline = [0, 1];
-      while (measure) {
-        var dart = measure * random(),
-          i,
-          l,
-          interval,
-          a,
-          b,
-          c,
-          d;
+  // Create a 1D Maximal Poisson Disc over [0, 1]
+  var radius = 1 / eccentricity,
+    radius2 = radius + radius;
+  function createPoisson() {
+    // domain is the set of points which are still available to pick from
+    // D = union{ [d_i, d_i+1] | i is even }
+    var domain = [radius, 1 - radius],
+      measure = 1 - radius2,
+      spline = [0, 1];
+    while (measure) {
+      var dart = measure * random(),
+        i,
+        l,
+        interval,
+        a,
+        b,
+        c,
+        d;
 
-        // Find where dart lies
-        for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
-          (a = domain[i]), (b = domain[i + 1]), (interval = b - a);
-          if (dart < measure + interval) {
-            spline.push((dart += a - measure));
-            break;
-          }
-          measure += interval;
+      // Find where dart lies
+      for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+        (a = domain[i]), (b = domain[i + 1]), (interval = b - a);
+        if (dart < measure + interval) {
+          spline.push((dart += a - measure));
+          break;
         }
-        (c = dart - radius), (d = dart + radius);
+        measure += interval;
+      }
+      (c = dart - radius), (d = dart + radius);
 
-        // Update the domain
-        for (i = domain.length - 1; i > 0; i -= 2) {
-          (l = i - 1), (a = domain[l]), (b = domain[i]);
-          // c---d          c---d  Do nothing
-          //   c-----d  c-----d    Move interior
-          //   c--------------d    Delete interval
-          //         c--d          Split interval
-          //       a------b
-          if (a >= c && a < d)
-            if (b > d) domain[l] = d; // Move interior (Left case)
-            else domain.splice(l, 2);
-          // Delete interval
-          else if (a < c && b > c)
-            if (b <= d) domain[i] = c; // Move interior (Right case)
-            else domain.splice(i, 0, c, d); // Split interval
-        }
-
-        // Re-measure the domain
-        for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
-          measure += domain[i + 1] - domain[i];
+      // Update the domain
+      for (i = domain.length - 1; i > 0; i -= 2) {
+        (l = i - 1), (a = domain[l]), (b = domain[i]);
+        // c---d          c---d  Do nothing
+        //   c-----d  c-----d    Move interior
+        //   c--------------d    Delete interval
+        //         c--d          Split interval
+        //       a------b
+        if (a >= c && a < d)
+          if (b > d) domain[l] = d; // Move interior (Left case)
+          else domain.splice(l, 2);
+        // Delete interval
+        else if (a < c && b > c)
+          if (b <= d) domain[i] = c; // Move interior (Right case)
+          else domain.splice(i, 0, c, d); // Split interval
       }
 
-      return spline.sort();
+      // Re-measure the domain
+      for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
+        measure += domain[i + 1] - domain[i];
     }
 
-    // Create the overarching container
-    var container = document.createElement("div");
-    container.style.position = "fixed";
-    container.style.top = "0";
-    container.style.left = "0";
-    container.style.width = "100%";
-    container.style.height = "0";
-    container.style.overflow = "visible";
-    container.style.zIndex = "900001";
+    return spline.sort();
+  }
 
-    // Confetto constructor
-    function Confetto(theme) {
-      this.frame = 0;
-      this.outer = document.createElement("div");
-      this.inner = document.createElement("div");
-      this.outer.appendChild(this.inner);
+  // Create the overarching container
+  var container = document.createElement("div");
+  container.style.position = "fixed";
+  container.style.top = "0";
+  container.style.left = "0";
+  container.style.width = "100%";
+  container.style.height = "0";
+  container.style.overflow = "visible";
+  container.style.zIndex = "900001";
 
-      var outerStyle = this.outer.style,
-        innerStyle = this.inner.style;
-      outerStyle.position = "absolute";
-      outerStyle.width = sizeMin + sizeMax * random() + "px";
-      outerStyle.height = sizeMin + sizeMax * random() + "px";
-      innerStyle.width = "100%";
-      innerStyle.height = "100%";
-      innerStyle.backgroundColor = theme();
+  // Confetto constructor
+  function Confetto(theme) {
+    this.frame = 0;
+    this.outer = document.createElement("div");
+    this.inner = document.createElement("div");
+    this.outer.appendChild(this.inner);
 
-      outerStyle.perspective = "50px";
-      outerStyle.transform = "rotate(" + 360 * random() + "deg)";
-      this.axis =
-        "rotate3D(" + cos(360 * random()) + "," + cos(360 * random()) + ",0,";
-      this.theta = 360 * random();
-      this.dTheta = dThetaMin + dThetaMax * random();
+    var outerStyle = this.outer.style,
+      innerStyle = this.inner.style;
+    outerStyle.position = "absolute";
+    outerStyle.width = sizeMin + sizeMax * random() + "px";
+    outerStyle.height = sizeMin + sizeMax * random() + "px";
+    innerStyle.width = "100%";
+    innerStyle.height = "100%";
+    innerStyle.backgroundColor = theme();
+
+    outerStyle.perspective = "50px";
+    outerStyle.transform = "rotate(" + 360 * random() + "deg)";
+    this.axis =
+      "rotate3D(" + cos(360 * random()) + "," + cos(360 * random()) + ",0,";
+    this.theta = 360 * random();
+    this.dTheta = dThetaMin + dThetaMax * random();
+    innerStyle.transform = this.axis + this.theta + "deg)";
+
+    this.x = window.innerWidth * random();
+    this.y = -deviation;
+    this.dx = sin(dxThetaMin + dxThetaMax * random());
+    this.dy = dyMin + dyMax * random();
+    outerStyle.left = this.x + "px";
+    outerStyle.top = this.y + "px";
+
+    // Create the periodic spline
+    this.splineX = createPoisson();
+    this.splineY = [];
+    for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
+      this.splineY[i] = deviation * random();
+    this.splineY[0] = this.splineY[l] = deviation * random();
+
+    this.update = function (height, delta) {
+      this.frame += delta;
+      this.x += this.dx * delta;
+      this.y += this.dy * delta;
+      this.theta += this.dTheta * delta;
+
+      // Compute spline and convert to polar
+      var phi = (this.frame % 7777) / 7777,
+        i = 0,
+        j = 1;
+      while (phi >= this.splineX[j]) i = j++;
+      var rho = interpolation(
+        this.splineY[i],
+        this.splineY[j],
+        (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
+      );
+      phi *= PI2;
+
+      outerStyle.left = this.x + rho * cos(phi) + "px";
+      outerStyle.top = this.y + rho * sin(phi) + "px";
       innerStyle.transform = this.axis + this.theta + "deg)";
+      return this.y > height + deviation;
+    };
+  }
 
-      this.x = window.innerWidth * random();
-      this.y = -deviation;
-      this.dx = sin(dxThetaMin + dxThetaMax * random());
-      this.dy = dyMin + dyMax * random();
-      outerStyle.left = this.x + "px";
-      outerStyle.top = this.y + "px";
+  function poof() {
+    if (!frame) {
+      // Append the container
+      document.body.appendChild(container);
 
-      // Create the periodic spline
-      this.splineX = createPoisson();
-      this.splineY = [];
-      for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
-        this.splineY[i] = deviation * random();
-      this.splineY[0] = this.splineY[l] = deviation * random();
+      // Add confetti
+      var theme = colorThemes[0],
+        count = 0;
+      (function addConfetto() {
+        var confetto = new Confetto(theme);
+        confetti.push(confetto);
+        container.appendChild(confetto.outer);
+        timer = setTimeout(addConfetto, spread * random());
+      })(0);
 
-      this.update = function (height, delta) {
-        this.frame += delta;
-        this.x += this.dx * delta;
-        this.y += this.dy * delta;
-        this.theta += this.dTheta * delta;
+      // Start the loop
+      var prev = undefined;
+      requestAnimationFrame(function loop(timestamp) {
+        var delta = prev ? timestamp - prev : 0;
+        prev = timestamp;
+        var height = window.innerHeight;
 
-        // Compute spline and convert to polar
-        var phi = (this.frame % 7777) / 7777,
-          i = 0,
-          j = 1;
-        while (phi >= this.splineX[j]) i = j++;
-        var rho = interpolation(
-          this.splineY[i],
-          this.splineY[j],
-          (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
-        );
-        phi *= PI2;
-
-        outerStyle.left = this.x + rho * cos(phi) + "px";
-        outerStyle.top = this.y + rho * sin(phi) + "px";
-        innerStyle.transform = this.axis + this.theta + "deg)";
-        return this.y > height + deviation;
-      };
-    }
-
-    function poof() {
-      if (!frame) {
-        // Append the container
-        document.body.appendChild(container);
-
-        // Add confetti
-        var theme = colorThemes[0],
-          count = 0;
-        (function addConfetto() {
-          var confetto = new Confetto(theme);
-          confetti.push(confetto);
-          container.appendChild(confetto.outer);
-          timer = setTimeout(addConfetto, spread * random());
-        })(0);
-
-        // Start the loop
-        var prev = undefined;
-        requestAnimationFrame(function loop(timestamp) {
-          var delta = prev ? timestamp - prev : 0;
-          prev = timestamp;
-          var height = window.innerHeight;
-
-          for (var i = confetti.length - 1; i >= 0; --i) {
-            if (confetti[i].update(height, delta)) {
-              container.removeChild(confetti[i].outer);
-              confetti.splice(i, 1);
-            }
+        for (var i = confetti.length - 1; i >= 0; --i) {
+          if (confetti[i].update(height, delta)) {
+            container.removeChild(confetti[i].outer);
+            confetti.splice(i, 1);
           }
-
-          if (timer || confetti.length)
-            return (frame = requestAnimationFrame(loop));
-
-          // Cleanup
-          document.body.removeChild(container);
-          frame = undefined;
-        });
-      }
-    }
-
-    // satoshi code sequence
-    const satoshi = [
-      "s",
-      "a",
-      "t",
-      "o",
-      "s",
-      "h",
-      "i",
-    ];
-    let satoshiIndex = 0;
-
-    // Event listener for key presses
-    document.addEventListener("keydown", function (event) {
-      if (event.key === satoshi[satoshiIndex]) {
-        satoshiIndex++;
-        if (satoshiIndex === satoshi.length) {
-          // Run your code when satoshi code is entered
-          poof();
-          satoshiIndex = 0; // Reset index for potential future uses
         }
+
+        if (timer || confetti.length)
+          return (frame = requestAnimationFrame(loop));
+
+        // Cleanup
+        document.body.removeChild(container);
+        frame = undefined;
+      });
+    }
+  }
+
+  // satoshi code sequence
+  const satoshi = [
+    "s",
+    "a",
+    "t",
+    "o",
+    "s",
+    "h",
+    "i",
+  ];
+  let satoshiIndex = 0;
+
+  // Event listener for key presses
+  document.addEventListener("keydown", function (event) {
+    if (event.key === satoshi[satoshiIndex]) {
+      satoshiIndex++;
+      if (satoshiIndex === satoshi.length) {
+        // Run your code when satoshi code is entered
+        poof();
+        satoshiIndex = 0; // Reset index for potential future uses
+      }
+    } else {
+      satoshiIndex = 0; // Reset index if incorrect key is pressed
+    }
+  });
+
+  const fetchBitcoinPrice = async () => {
+    try {
+      const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+      const data = await response.json();
+      const price = data.bitcoin.usd;
+  
+      // Replace the following lines with your desired logic for handling the price data
+      // console.log('Bitcoin Price:', price);
+  
+      if (price > 100000) {
+        // Replace this with your logic for handling Bitcoin price greater than 100000
+        // console.log('Bitcoin price is greater than $100,000');
+        poof();
+        
       } else {
-        satoshiIndex = 0; // Reset index if incorrect key is pressed
+        // Replace this with your logic for handling Bitcoin price less than or equal to 100000
+        // console.log('Bitcoin price is less than or equal to $100,000');
       }
-    });
-
-      const fetchBitcoinPrice = async () => {
-        try {
-          const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
-          const data = await response.json();
-          const price = data.bitcoin.usd;
-      
-          // Replace the following lines with your desired logic for handling the price data
-          // console.log('Bitcoin Price:', price);
-      
-          if (price > 100000) {
-            // Replace this with your logic for handling Bitcoin price greater than 100000
-            // console.log('Bitcoin price is greater than $100,000');
-            poof();
-            
-          } else {
-            // Replace this with your logic for handling Bitcoin price less than or equal to 100000
-            // console.log('Bitcoin price is less than or equal to $100,000');
-          }
-        } catch (error) {
-          // console.error('Error fetching bitcoin price:', error);
-        }
-      };
-      
-      // Call the function to fetch Bitcoin price
-      fetchBitcoinPrice();
+    } catch (error) {
+      // console.error('Error fetching bitcoin price:', error);
+    }
   };
+  
+  // Call the function to fetch Bitcoin price
+  fetchBitcoinPrice();
+};
