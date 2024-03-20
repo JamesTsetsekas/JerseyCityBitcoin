@@ -1,0 +1,46 @@
+---
+layout: 'default.html'
+description: 'Bitcoin Price'
+metaTitle: 'Bitcoin Price'
+title: Bitcoin Price
+permalink: 'bitcoinis/'
+eleventyNavigation:
+key: Price
+order: 700
+---
+<button onclick="loadRandomQuote()">Load Random Quote</button>
+<h1 id="bitcoin-description">Bitcoin is ...</h1>
+
+<script>
+  // Define an array of quotes with optional authors
+  const quotes = [
+    { text: "a Declaration of Independence in cyberspace.", author: "Michael Saylor" },
+    { text: "Hope.", author: "Michael Saylor" },
+    { text: "an Instrument of economic empowerment.", author: "Jack Dorsey" },
+    { text: "a Peer-to-Peer Electronic Cash System.", author: "Satoshi" },
+    { text: "a swarm of cyber hornets serving the goddess of wisdom, feeding on the fire of truth, exponentially growing ever smarter, faster, and stronger behind a wall of encrypted energy.", author: "Michael Saylor" },
+    { text: "the separation of money and state.", author: "Unknown" },
+    { text: "a tool for financial self-sovereignty.", author: "Unknown" }
+    
+    // Add more quotes as needed
+  ];
+
+  let lastRandomIndex = -1;
+
+  // Function to load a random quote
+  function loadRandomQuote() {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * quotes.length);
+    } while (randomIndex === lastRandomIndex);
+
+    lastRandomIndex = randomIndex;
+
+    const randomQuote = quotes[randomIndex];
+
+    // Update the content of the element with the id "bitcoin-description"
+    const quoteText = `Bitcoin is ${randomQuote.text}`;
+    const authorText = randomQuote.author ? `<br>- ${randomQuote.author}` : '<br>- Unknown';
+    document.getElementById("bitcoin-description").innerHTML = quoteText + authorText;
+  }
+</script>
