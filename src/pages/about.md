@@ -54,6 +54,6 @@ Follow us on:
 - <a href="https://twitter.com/JerseyCityBTC" target="_blank">Twitter</a>
 - <div class="tooltip"><a href="/assets/images/npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2.png" target="_blank">NOSTR NPUB</a>
   <span class="tooltiptext"><br><span class="npubstring" >npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2<span><img src="/assets/images/npub1a6y4ujay2040xz4pygs30w5r9shw9qvu0nxwhc5dlefddpmuslpqdlu2s2.png" alt="NOSTR npub" /></span></div>
-- <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-713306828927?aff=oddtdtcreator" target="_blank">eventbrite</a>
+- <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-781681238627" target="_blank">eventbrite</a>
 - <a href="https://t.me/+gUMTekJz7PM3MzZh" target="_blank">Telegram</a>
 
