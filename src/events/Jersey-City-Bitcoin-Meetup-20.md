@@ -2,7 +2,7 @@
 meetup: https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-824077276317?aff=oddtdtcreator
 layout: post
 published: true
-title: "Jersey City Bitcoin Meetup #155"
+title: "Jersey City Bitcoin Meetup #20"
 date: 2024-08-08
 type: jcbtc
 tag: event
