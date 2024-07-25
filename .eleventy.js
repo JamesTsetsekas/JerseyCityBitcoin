@@ -102,7 +102,10 @@ module.exports = function (eleventyConfig) {
 
   // Add Events collection
   eleventyConfig.addCollection('events', function (collection) {
-    return collection.getFilteredByGlob('./src/events/*.md');
+    return collection.getFilteredByGlob([
+      './src/events/*.md',
+      './src/events/*/*.md'
+    ]);
   });
   
   // adds the RSS plugin
