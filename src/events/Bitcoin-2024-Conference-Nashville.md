@@ -9,7 +9,9 @@ tag: event
 ---
 Bitcoin 2024 Conference Nashville. To the world's largest Bitcoin conference! Thursday, July 25th - 27th , 2024. 
 
+<p></p>
+
 Live Streams: 
-<a href="https://rumble.com/c/BitcoinMagazine" target="_blank">Rumble</a> 
-<a href="https://www.youtube.com/c/bitcoinmagazine" target="_blank">Youtube</a>.
+- <a href="https://rumble.com/c/BitcoinMagazine" target="_blank">Rumble</a> 
+- <a href="https://www.youtube.com/c/bitcoinmagazine" target="_blank">Youtube</a>.
 
