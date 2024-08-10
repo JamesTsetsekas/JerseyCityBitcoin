@@ -2,9 +2,9 @@
 <header class="Header">
   <div class="Header-inner">
     <div class="Header-logo">
-      <img src="/assets/images/JCBTC.png" alt="{{ site.data.settings.title }}" />
-      <span class="long-title"><a href="{{ site.github.url }}/">{{ site.data.settings.title }}</a></span>
-      <span class="short-title"><a href="{{ site.github.url }}/">JC BTC</a></span>
+      <img src="/assets/images/JCBTC.png" alt="{{ client.title }}" />
+      <span class="long-title"><a href="/">{{ client.title }}</a></span>
+      <span class="short-title"><a href="/">JC BTC</a></span>
     </div>
     <nav class="Header-nav">
       {%- for entry in navPages %}
@@ -12,7 +12,7 @@
         entry.title }}</a>
       {# Add static link after the third item (index 1) #}
       {% if loop.index == navPages.length - 1 %}
-      <a href="{{site.data.settings.meetup}}" target="_blank">Meetup</a>
+      <a href="{{client.meetup}}" target="_blank">Meetup</a>
       {% endif %}
       {% endfor %}
     </nav>
