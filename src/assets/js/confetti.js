@@ -115,7 +115,7 @@ window.onload = function () {
     this.outer.appendChild(this.inner);
 
     var outerStyle = this.outer.style,
-      innerStyle = this.inner.style;
+    innerStyle = this.inner.style;
     outerStyle.position = "absolute";
     outerStyle.width = sizeMin + sizeMax * random() + "px";
     outerStyle.height = sizeMin + sizeMax * random() + "px";

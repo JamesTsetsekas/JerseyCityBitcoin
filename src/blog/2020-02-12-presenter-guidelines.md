@@ -1,9 +1,9 @@
 ---
-layout: 'blog.html'
+layout: post.html
 published: false
 type: blog
 title: "Presenter Guidelines"
-permalink: /presenter-guidelines/
+#permalink: /presenter-guidelines/
 date: 2023-12-01
 author: "James Tsetsekas"
 ---

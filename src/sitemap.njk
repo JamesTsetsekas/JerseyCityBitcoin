@@ -2,80 +2,18 @@
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-<loc>https://jerseycitybitcoin.com/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>1.00</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/about/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/blog/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/contact-us/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/jersey-city-bitcoin-meetup-14/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/jersey-city-bitcoin-meetup-13/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/jersey-city-bitcoin-meetup-12/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/bitcoin-etf-party-or-funeral-with-james-seyffart/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/bitcoin-year-in-review-with-marty-bent/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/mystery-bag-meetup-dylan-leclair-&amp;-will-foxley/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/bitdevs-nyc-socratic-seminar-131/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/lnzues-launch-party/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/events/mystery-bag-meetup-kelly-greer-&amp;-meltem-demirors/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://jerseycitybitcoin.com/blog/hello-world/</loc>
-<lastmod>2024-01-12T19:33:06+00:00</lastmod>
-<priority>0.80</priority>
-</url>
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in collections.all %}
+        {% if not page.url.endsWith('.css') and page.url != '/admin/' %}
+            {% set isBlogOrEvent = page.url.startsWith('/blog/') or page.url.startsWith('/events/') %}
+            {% set isPublished = page.data.published is not defined or page.data.published %}
+            {% if not isBlogOrEvent or (isBlogOrEvent and isPublished) %}
+                <url>
+                    <loc>{{ site.url }}{{ page.url | url }}</loc>
+                    <lastmod>{{ page.date.toISOString() }}</lastmod>
+                </url>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 </urlset>

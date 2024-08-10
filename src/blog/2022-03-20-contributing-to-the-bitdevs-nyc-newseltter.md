@@ -1,8 +1,8 @@
 ---
-layout: 'blog.html'
+layout: post.html
 published: false
 type: blog
-title: "Contributing to the BitDevs NYC Newsletter"
+#title: "Contributing to the BitDevs NYC Newsletter"
 date: 2023-12-01
 author: "James Tsetsekas"
 ---

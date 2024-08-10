@@ -1,10 +1,10 @@
 ---
-layout: 'blog.html'
+layout: post.html
 published: false
 type: blog
 tag: blog
 title: "Running a Great Socratic Seminar"
-permalink: /running-a-great-socratic-seminar/
+#permalink: /running-a-great-socratic-seminar/
 date: 2023-12-01
 author: "James Tsetsekas"
 ---
