@@ -3,7 +3,7 @@ meetup: https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-82407727
 layout: post
 published: true
 title: "Jersey City Bitcoin Meetup #22"
-date: 2024-10-12
+date: 2024-10-10
 type: jcbtc
 tag: event
 ---
