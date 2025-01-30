@@ -1,0 +1,504 @@
+---
+layout: 'default.html'
+description: 'Bitcoin Price Calculator'
+metaTitle: 'Bitcoin Price Calculator'
+title: Bitcoin Price Calculator
+permalink: 'satscalc/'
+eleventyNavigation:
+key: PriceCalculator
+order: 700
+---
+<style>
+  .converter-wrapper {
+    width: 100%;
+    border: 1px solid #D6D6D6;
+    display: flex;
+    padding: 5px 24px;
+    position: relative;
+    flex-wrap: wrap;
+    max-width: 550px;
+    background: #FFFFFF;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+  }
+  .stats-table.larger-table {
+    border: none !important;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.06);
+  }
+  
+  .stats-table.larger-table td, .stats-table.larger-table th {
+    color: black;
+    border: 0 !important;
+    padding: 10px;
+  }
+  
+  .stats-table th, .stats-table tr {
+    border: 0 !important;
+  }
+  
+ .stats-table tr th {
+    color: black;
+  }
+  
+  .post-title-main {
+    text-align: center !important;
+  }
+  .rotating {
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+
+  @keyframes spin {
+    from {
+      transform:rotate(0deg);
+    }
+    to {
+      transform:rotate(360deg);
+    }
+  }
+  .page-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .converter-wrapper {
+        width: 100%;
+        border: 1px solid #D6D6D6;
+        display: flex;
+        padding: 5px 24px;
+        position: relative;
+        flex-wrap: wrap;
+        max-width: 550px;
+        background: #FFFFFF;
+        box-shadow: none;
+        box-sizing: border-box;
+        border-radius: 15px;
+    }
+    .converter-heading {
+        color: #1d5ac3;
+        font-size: 26px;
+        min-height: 32px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.66;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+  .page-subtitle {
+        font-size: 21px;
+        line-height: 28px;
+        margin-bottom: 40px;
+    }
+  .input-inner {
+      width: 100%;
+      padding: 12px;
+        background: #f5f5f5;
+        padding-top: 36px;
+        border-radius: 15px;
+        position: relative;
+        color: #0E0C28;
+        cursor: text;
+        display: inline-flex;
+        font-size: 1rem;
+        box-sizing: border-box;
+        align-items: center;
+        font-weight: 400;
+        line-height: 1.1876em;
+  }
+  @media (min-width: 600px) {
+      .input-inner {
+          padding-left: 24px;
+            padding-right: 24px;
+      }
+  }
+  .currency-meta-info {
+      height: auto;
+        margin-top: 0 !important;
+        max-height: initial;
+        align-items: center;
+        white-space: initial;
+        margin-right: 8px;
+        display: flex;
+        grid-gap: 8px;
+  }
+  .currency-name-long {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding: 0;
+  }
+  .currency-name-short {
+    margin: 0;
+    padding: 0;
+    color: #898989;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.66;
+  }
+  #bts-conv {
+        margin: 0 auto;
+        width: 100%;
+        color: #000;
+        padding-bottom: 30px;
+        padding-top: 25px;
+    }
+  .input-wrapper {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #C0C0C0;
+    transition: 0.25s;
+    border-radius: 15px;
+  }
+
+  .input-wrapper:hover {
+      border-color: #000;
+  }
+  .input-wrapper:focus {
+      border-color: #1d5ac3;
+  }
+  .input-label {
+      font-weight: 400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #898989;
+    width: 100%;
+    display: flex;
+    padding: 12px;
+    z-index: 1;
+    font-size: 14px;
+    transform: none !important;
+    box-sizing: border-box;
+    line-height: 20px;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+#bts-conv input[type="text"] {
+    border-radius: 15px;
+    color: #555555;
+    padding: 0;
+    font-size: 35px;
+    text-align: end;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding-right: 20px;
+    padding-top: 25px;
+    position: absolute;
+    font-weight: 300;
+    background: transparent;
+    border: none;
+}
+
+.currency-logo {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.equal-sign {
+    margin-top: -10px;
+}
+
+.second-field {
+    margin-top: 10px;
+}
+@media(max-width: 800px) {
+    .converter-heading {
+        font-size: 21px;
+    }
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  function btcToSatoshi(btc) {
+    return btc * 100000000;
+  }
+  function satoshiToBtc(satoshi) {
+    return satoshi / 100000000;
+  }
+  function satoshiToUsd(satoshi, bitcoinPrice) {
+    return satoshiToBtc(satoshi) * bitcoinPrice;
+  }
+  function usdToSatoshi(usd, bitcoinPrice) {
+    return btcToSatoshi(usd / bitcoinPrice);
+  }
+  function btcToUsd(btc, bitcoinPrice) {
+    return btc * bitcoinPrice;
+  }
+  function usdToBtc(usd, bitcoinPrice) {
+    return usd / bitcoinPrice;
+  }
+  function satoshiToCurrency(satoshi, bitcoinPrice, rate) {
+    return satoshiToBtc(satoshi) * bitcoinPrice / rate;
+  }
+  function currencyToSatoshi(amount, bitcoinPrice, rate) {
+    return btcToSatoshi(amount * rate / bitcoinPrice);
+  }
+
+  function parseNumber(input) {
+    const number = parseFloat(input.replace(/[^0-9.]+/g, ''));
+    return isNaN(number) ? 0 : number;
+  }
+
+  let debounceTimer;
+  function getBitcoinPriceAnd(callback) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      jQuery.get("https://api.coindesk.com/v1/bpi/currentprice.json", function(data) {
+        let bitcoinPriceNow = {
+          USD: parseFloat(data.bpi.USD.rate.replace(/,/g, '')),
+          EUR: parseFloat(data.bpi.EUR.rate.replace(/,/g, '')),
+          GBP: parseFloat(data.bpi.GBP.rate.replace(/,/g, ''))
+        };
+        callback(bitcoinPriceNow);
+      });
+    }, 500);
+  }
+
+  jQuery(function() {
+    jQuery("#btu-bts").bind("input", function() {
+      let raw = jQuery("#btu-bts").val();
+      let parsed = parseNumber(raw);
+
+      getBitcoinPriceAnd(function(bitcoinPriceNow) {
+        let btcValue = satoshiToBtc(parsed);
+        let usdValue = satoshiToUsd(parsed, bitcoinPriceNow.USD);
+        let eurValue = satoshiToCurrency(parsed, bitcoinPriceNow.USD, bitcoinPriceNow.EUR);
+        let gbpValue = satoshiToCurrency(parsed, bitcoinPriceNow.USD, bitcoinPriceNow.GBP);
+
+        // console.log(`Satoshis: ${parsed}, BTC: ${btcValue}, USD: ${usdValue}, EUR: ${eurValue}, GBP: ${gbpValue}, Bitcoin Price: ${bitcoinPriceNow.USD}`);
+
+        jQuery("#btc-field").val(btcValue.toFixed(8));
+        jQuery("#btus-stus").val(usdValue.toFixed(2));
+        jQuery("#bteu-stus").val(eurValue.toFixed(2));
+        jQuery("#btgb-stus").val(gbpValue.toFixed(2));
+      });
+    });
+
+    jQuery("#btus-stus").bind("input", function() {
+      let raw = jQuery("#btus-stus").val();
+      let parsed = parseNumber(raw);
+
+      getBitcoinPriceAnd(function(bitcoinPriceNow) {
+        let btcValue = usdToBtc(parsed, bitcoinPriceNow.USD);
+        let satoshiValue = usdToSatoshi(parsed, bitcoinPriceNow.USD);
+
+        console.log(`USD: ${parsed}, BTC: ${btcValue}, Satoshis: ${satoshiValue}, Bitcoin Price: ${bitcoinPriceNow.USD}`);
+
+        jQuery("#btc-field").val(btcValue.toFixed(8));
+        jQuery("#btu-bts").val(satoshiValue.toFixed(0));
+      });
+    });
+
+    jQuery("#bteu-stus").bind("input", function() {
+      let raw = jQuery("#bteu-stus").val();
+      let parsed = parseNumber(raw);
+
+      getBitcoinPriceAnd(function(bitcoinPriceNow) {
+        let btcValue = usdToBtc(parsed, bitcoinPriceNow.EUR);
+        let satoshiValue = btcToSatoshi(btcValue);
+
+        console.log(`EUR: ${parsed}, BTC: ${btcValue}, Satoshis: ${satoshiValue}, Bitcoin Price: ${bitcoinPriceNow.EUR}`);
+
+        jQuery("#btc-field").val(btcValue.toFixed(8));
+        jQuery("#btu-bts").val(satoshiValue.toFixed(0));
+      });
+    });
+
+    jQuery("#btgb-stus").bind("input", function() {
+      let raw = jQuery("#btgb-stus").val();
+      let parsed = parseNumber(raw);
+
+      getBitcoinPriceAnd(function(bitcoinPriceNow) {
+        let btcValue = usdToBtc(parsed, bitcoinPriceNow.GBP);
+        let satoshiValue = btcToSatoshi(btcValue);
+
+        console.log(`GBP: ${parsed}, BTC: ${btcValue}, Satoshis: ${satoshiValue}, Bitcoin Price: ${bitcoinPriceNow.GBP}`);
+
+        jQuery("#btc-field").val(btcValue.toFixed(8));
+        jQuery("#btu-bts").val(satoshiValue.toFixed(0));
+      });
+    });
+
+    jQuery("#btc-field").bind("input", function() {
+      let raw = jQuery("#btc-field").val();
+      let parsed = parseNumber(raw);
+
+      getBitcoinPriceAnd(function(bitcoinPriceNow) {
+        let usdValue = btcToUsd(parsed, bitcoinPriceNow.USD);
+        let eurValue = btcToUsd(parsed, bitcoinPriceNow.EUR);
+        let gbpValue = btcToUsd(parsed, bitcoinPriceNow.GBP);
+        let satoshiValue = btcToSatoshi(parsed);
+
+        console.log(`BTC: ${parsed}, USD: ${usdValue}, EUR: ${eurValue}, GBP: ${gbpValue}, Satoshis: ${satoshiValue}, Bitcoin Price: ${bitcoinPriceNow.USD}`);
+
+        jQuery("#btus-stus").val(usdValue.toFixed(2));
+        jQuery("#bteu-stus").val(eurValue.toFixed(2));
+        jQuery("#btgb-stus").val(gbpValue.toFixed(2));
+        jQuery("#btu-bts").val(satoshiValue.toFixed(0));
+      });
+    });
+  });
+
+  async function fetchBitcoinPrice() {
+    const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+    const data = await response.json();
+    return data.bpi;
+  }
+
+  function updatePrice(currency) {
+    fetchBitcoinPrice().then(bpi => {
+      const price = bpi[currency].rate;
+      document.getElementById('price').innerHTML = `${bpi[currency].symbol} ${price}`;
+    });
+  }
+
+  function showCurrencyFields(currency) {
+    const fields = ['usd-wrapper', 'eur-wrapper', 'gbp-wrapper'];
+    fields.forEach(field => {
+      document.getElementById(field).style.display = 'none';
+      document.getElementById(field).querySelector('input').value = '';
+    });
+    document.getElementById(`${currency.toLowerCase()}-wrapper`).style.display = 'block';
+
+    // Clear all input fields
+    document.getElementById('btu-bts').value = '';
+    document.getElementById('btc-field').value = '';
+    document.getElementById('btus-stus').value = '';
+    document.getElementById('bteu-stus').value = '';
+    document.getElementById('btgb-stus').value = '';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updatePrice('USD'); // Default to USD
+    showCurrencyFields('USD');
+
+    document.getElementById('usd-btn').addEventListener('click', () => {
+      updatePrice('USD');
+      showCurrencyFields('USD');
+    });
+    document.getElementById('eur-btn').addEventListener('click', () => {
+      updatePrice('EUR');
+      showCurrencyFields('EUR');
+    });
+    document.getElementById('gbp-btn').addEventListener('click', () => {
+      updatePrice('GBP');
+      showCurrencyFields('GBP');
+    });
+  });
+</script>
+<div class="converter-wrapper">
+  <div>
+    <h1>Bitcoin Price</h1>
+    <div id="price"></div>
+    <button id="usd-btn">USD</button>
+    <button id="eur-btn">EUR</button>
+    <button id="gbp-btn">GBP</button>
+  </div>
+  <div id="bts-conv">
+    <div class="input-wrapper">
+      <label class="input-label">
+        <span>Currency</span>
+        <span>Amount</span>
+      </label>
+      <div class="input-inner">
+        <div class="currency-meta-info">
+          <img src="/assets/img/satoshi-icon-small.svg" role="presentation" class="currency-logo">
+          <div>
+            <p class="currency-name-long">Satoshis</p>
+            <p class="currency-name-short">SATS</p>
+          </div>
+        </div>
+        <input type="text" placeholder="0" id="btu-bts">
+      </div>
+    </div>
+    <div class="input-wrapper" id="usd-wrapper">
+      <label class="input-label">
+        <span>Currency</span>
+        <span>Amount</span>
+      </label>
+      <div class="input-inner">
+        <div class="currency-meta-info">
+          <img src="/assets/img/usd-icon-small.svg" role="presentation" class="currency-logo">
+          <div>
+            <p class="currency-name-long">US Dollar</p>
+            <p class="currency-name-short">USD</p>
+          </div>
+        </div>
+        <input type="text" id="btus-stus" placeholder="0">
+      </div>
+    </div>
+    <div class="input-wrapper" id="eur-wrapper" style="display: none;">
+      <label class="input-label">
+        <span>Currency</span>
+        <span>Amount</span>
+      </label>
+      <div class="input-inner">
+        <div class="currency-meta-info">
+          <img src="/assets/img/eur-icon-small.svg" role="presentation" class="currency-logo">
+          <div>
+            <p class="currency-name-long">Euro</p>
+            <p class="currency-name-short">EUR</p>
+          </div>
+        </div>
+        <input type="text" id="bteu-stus" placeholder="0">
+      </div>
+    </div>
+    <div class="input-wrapper" id="gbp-wrapper" style="display: none;">
+      <label class="input-label">
+        <span>Currency</span>
+        <span>Amount</span>
+      </label>
+      <div class="input-inner">
+        <div class="currency-meta-info">
+          <img src="/assets/img/gbp-icon-small.svg" role="presentation" class="currency-logo">
+          <div>
+            <p class="currency-name-long">British Pound</p>
+            <p class="currency-name-short">GBP</p>
+          </div>
+        </div>
+        <input type="text" id="btgb-stus" placeholder="0">
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <label class="input-label">
+        <span>Currency</span>
+        <span>Amount</span>
+      </label>
+      <div class="input-inner">
+        <div class="currency-meta-info">
+          <img src="/assets/img/bitcoin-icon-small.svg" role="presentation" class="currency-logo">
+          <div>
+            <p class="currency-name-long">Bitcoin</p>
+            <p class="currency-name-short">BTC</p>
+          </div>
+        </div>
+        <input type="text" id="btc-field" placeholder="0">
+      </div>
+    </div>
+  </div>
+</div>
