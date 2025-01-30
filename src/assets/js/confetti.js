@@ -241,23 +241,17 @@ window.onload = function () {
       const data = await response.json();
       const price = data.bitcoin.usd;
   
-      // Replace the following lines with your desired logic for handling the price data
-      // console.log('Bitcoin Price:', price);
-  
-      if (price > 100000) {
-        // Replace this with your logic for handling Bitcoin price greater than 100000
-        // console.log('Bitcoin price is greater than $100,000');
+      if (price > 250000) {
         poof();
-        
       } else {
-        // Replace this with your logic for handling Bitcoin price less than or equal to 100000
-        // console.log('Bitcoin price is less than or equal to $100,000');
+        // Logic for handling Bitcoin price less than or equal to 250,000
       }
     } catch (error) {
-      // console.error('Error fetching bitcoin price:', error);
+      // Handle error
     }
   };
   
   // Call the function to fetch Bitcoin price
   fetchBitcoinPrice();
+  
 };
