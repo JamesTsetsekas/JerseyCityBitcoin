@@ -18,4 +18,4 @@ Please join us for the first <a href="https://www.eventbrite.com/e/jersey-city-b
 
 <p></p>
 
- Going forward we will be having meetups on second thursday of every month, we will be preparing loose agendas on new happenings or topics driven by suggestions from our community members. Please join our [telegram](https://t.me/+WOiR_ajP-AgxNmMx) to participate in setting agendas for future meetups and contributing content to our blog.
+ Going forward we will be having meetups on second thursday of every month, we will be preparing loose agendas on new happenings or topics driven by suggestions from our community members.

@@ -10,7 +10,7 @@ authorLink: https://twitter.com/JamesTsetsekas
 ---
 Hello World! 
 
-This Site will serve as an announcement board for Jersey City Bitcoin Meetup Events, and other local or larger meetups or bitdevs events. We also have a blog section, myself and some other members will be contributing to. If you are interested in contributing to the blog please contact us via our [telegram](https://t.me/+WOiR_ajP-AgxNmMx).
+This Site will serve as an announcement board for Jersey City Bitcoin Meetup Events, and other local or larger meetups or bitdevs events. We also have a blog section, myself and some other members will be contributing to. If you are interested in contributing to the blog please contact us.
 
 I think it's only fitting, being that this is the first "hello world" blog post of our site to include a quote Satoshi included in the genesis block.
 
