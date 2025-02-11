@@ -234,13 +234,12 @@ window.onload = function () {
       satoshiIndex = 0; // Reset index if incorrect key is pressed
     }
   });
-
   const fetchBitcoinPrice = async () => {
     try {
-      const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+      const response = await fetch('https://bitpay.com/api/rates/BTC/USD');
       const data = await response.json();
-      const price = data.bitcoin.usd;
-  
+      const price = data.data.rate;
+
       if (price > 250000) {
         poof();
       } else {
@@ -250,7 +249,6 @@ window.onload = function () {
       // Handle error
     }
   };
-  
   // Call the function to fetch Bitcoin price
   fetchBitcoinPrice();
   
