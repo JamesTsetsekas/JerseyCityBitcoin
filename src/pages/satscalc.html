@@ -279,11 +279,11 @@ input:focus {
   function getBitcoinPriceAnd(callback) {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
-      jQuery.get("https://api.coindesk.com/v1/bpi/currentprice.json", function(data) {
+      jQuery.get("https://bitpay.com/api/rates", function(data) {
         let bitcoinPriceNow = {
-          USD: parseFloat(data.bpi.USD.rate.replace(/,/g, '')),
-          EUR: parseFloat(data.bpi.EUR.rate.replace(/,/g, '')),
-          GBP: parseFloat(data.bpi.GBP.rate.replace(/,/g, ''))
+          USD: parseFloat(data.find(rate => rate.code === 'USD').rate),
+          EUR: parseFloat(data.find(rate => rate.code === 'EUR').rate),
+          GBP: parseFloat(data.find(rate => rate.code === 'GBP').rate)
         };
         callback(bitcoinPriceNow);
       });
