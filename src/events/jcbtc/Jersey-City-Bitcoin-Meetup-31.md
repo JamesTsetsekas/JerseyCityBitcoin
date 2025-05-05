@@ -1,7 +1,7 @@
 ---
 meetup: https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-824077276317?aff=oddtdtcreator
 layout: post
-published: true
+published: false
 title: "Jersey City Bitcoin Meetup #31"
 type: jcbtc
 date: 2025-06-10T23:00:26.115Z
