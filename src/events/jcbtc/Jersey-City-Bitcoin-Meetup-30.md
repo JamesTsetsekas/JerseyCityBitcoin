@@ -2,14 +2,14 @@
 meetup: https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-824077276317?aff=oddtdtcreator
 layout: post
 published: true
-title: "Jersey City Bitcoin Meetup #29"
+title: "Jersey City Bitcoin Meetup #30"
 type: jcbtc
-date: 2025-04-08T23:00:26.115Z
+date: 2025-06-12T23:00:26.115Z
 tag: event
 ---
 ## Announcements
 
-Please join us for <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-824077276317?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Meetup #29</a>! at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> on Thursday, May 8th @ 7 - 9pm EST for beer, Bitcoin, and thoughtful discussion.
+Please join us for <a href="https://www.eventbrite.com/e/jersey-city-bitcoin-meetup-tickets-824077276317?aff=oddtdtcreator" target="_blank">Jersey City Bitcoin Meetup #30</a>! at <a href="https://maps.app.goo.gl/xghGUsfjz4JeEvwp8" target="_blank">Zeppelin Hall Beer Garden</a> on Thursday, June 12th @ 7 - 9pm EST for beer, Bitcoin, and thoughtful discussion.
 
 * 🍺 beer 🍻
 * {% include "bitcoinemoji.html" %} Bitcoin {% include "bitcoinlogo.html" %}
