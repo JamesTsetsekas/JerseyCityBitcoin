@@ -4,7 +4,7 @@ layout: post
 published: false
 title: "Jersey City Bitcoin Meetup #31"
 type: jcbtc
-date: 2025-06-10T23:00:26.115Z
+date: 2025-07-10
 tag: event
 ---
 ## Announcements
