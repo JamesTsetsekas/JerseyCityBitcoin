@@ -2,7 +2,7 @@
 layout: post
 published: false
 type: jcbtc
-tag: event
+tags: [event]
 title: "EVENT TEMPLATE"
 date: 2023-12-01
 meetup: "https://www.meetup.com/your-event-link/"

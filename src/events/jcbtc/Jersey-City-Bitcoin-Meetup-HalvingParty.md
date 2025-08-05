@@ -4,7 +4,7 @@ published: true
 title: "Jersey City Bitcoin Meetup Halving Party!"
 date: 2024-04-20
 type: jcbtc
-tag: event
+tags: [event]
 ---
 ## Announcements
 

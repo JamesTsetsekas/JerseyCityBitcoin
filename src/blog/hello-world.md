@@ -2,7 +2,7 @@
 layout: post.html
 published: true
 type: event
-tag: event
+tags: [event]
 title: Hello World!
 date: 2023-12-02
 author: James Tsetsekas

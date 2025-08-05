@@ -5,7 +5,7 @@ published: true
 title: "HRF x PubKey -- Unlocking Energy & Financial Freedom in Africa"
 date: 2024-01-18
 type: other
-tag: event
+tags: [event]
 ---
 The Human Rights Foundation and PubKey are teaming up to launch a new monthly series! Each month we'll dive into specific HRF initiatives with a focus on how #Bitcoin and #FreedomTech advance humanitarian goals.
 

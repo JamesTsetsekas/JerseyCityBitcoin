@@ -5,7 +5,7 @@ published: true
 title: "Jersey City Bitcoin Meetup #14"
 date: 2024-01-25
 type: jcbtc
-tag: event
+tags: [event]
 ---
 ## Announcements
 <strong>*NOTE* If you plan on attending this event</strong> FYI serveral members are going to be going to <a href="https://www.meetup.com/bitdevsnyc/events/298283874/" target="_blank">NYC Bitdevs</a>, and afterparty at Chaincode Labs at 203 East 45th Street 10017 and after-party at <a href="https://theperfectpintnyc.com/east-midtown-nyc/" target="_blank">The Perfect Pint East</a>. FYI also tonight is <a href="https://jerseycitybitcoin.com/events/pubkey-lightning-monthly/">⚡ PubKey - Lightning Monthly ⚡</a><br><span>Come to chat, network, and learn about bitcoin!<br>

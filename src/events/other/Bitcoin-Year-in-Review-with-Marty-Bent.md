@@ -5,7 +5,7 @@ published: true
 title: "Bitcoin Year in Review w Marty Bent"
 date: 2023-12-21
 type: other
-tag: event
+tags: [event]
 ---
 ⚡⚡⚡LAUNCH PARTY⚡⚡⚡
 

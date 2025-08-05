@@ -5,7 +5,7 @@ published: true
 title: "Jersey City Bitcoin Meetup #13 ETF"
 date: 2024-01-11
 type: jcbtc
-tag: event
+tags: [event]
 ---
 ## Announcements
 

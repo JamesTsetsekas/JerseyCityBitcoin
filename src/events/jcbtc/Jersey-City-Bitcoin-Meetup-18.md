@@ -5,7 +5,7 @@ published: true
 title: "Jersey City Bitcoin Meetup #18"
 date: 2024-06-13
 type: jcbtc
-tag: event
+tags: [event]
 ---
 ## Announcements
 

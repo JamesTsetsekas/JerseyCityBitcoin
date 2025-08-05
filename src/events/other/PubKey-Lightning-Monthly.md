@@ -5,7 +5,7 @@ published: true
 title: "⚡ PubKey - Lightning Monthly ⚡"
 date: 2024-01-25
 type: other
-tag: event
+tags: [event]
 ---
 Your favorite bitcoin lightning meetup at Pubkey, with resident lightning protocol destroyer: Evan Kaloudis, the most yoked dude in lightning: Sachin Meier, and the man so nice they named him thrice: JHB
 

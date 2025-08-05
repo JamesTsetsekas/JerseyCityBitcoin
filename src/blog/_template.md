@@ -2,7 +2,7 @@
 layout: 'post.html'
 published: false
 type: event
-tag: event
+tags: [event]
 title: "BLOG TEMPLATE"
 date: 2023-12-01
 author: "James Tsetsekas"

@@ -6,7 +6,7 @@ title: Test Post
 date: 2023-12-02
 author: James Tsetsekas
 type: event
-tag: event
+tags: [event]
 ---
 - - -
 
