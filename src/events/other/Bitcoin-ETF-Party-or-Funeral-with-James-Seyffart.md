@@ -4,7 +4,7 @@ layout: post
 published: true
 title: "Bitcoin ETF Party or Funeral with James Seyffart"
 date: 2024-01-11
-type: other
+type: [other]
 tags: [event]
 ---
 Bloomberg ETF Analyst James Seyffart heads to PubKey immediately following the SEC Window to approve Spot Bitcoin ETFs closes.

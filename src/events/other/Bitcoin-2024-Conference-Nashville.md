@@ -4,7 +4,7 @@ layout: post
 published: true
 title: "Bitcoin 2024 Conference Nashville"
 date: 2024-07-25
-type: other
+type: [other]
 tags: [event]
 ---
 Bitcoin 2024 Conference Nashville. To the world's largest Bitcoin conference! Thursday, July 25th - 27th , 2024. 

@@ -4,7 +4,7 @@ layout: post
 published: true
 title: "Bitdevs NYC Socratic Seminar 131"
 date: 2023-12-14
-type: other
+type: [other]
 tags: [event]
 ---
 

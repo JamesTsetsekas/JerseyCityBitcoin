@@ -4,7 +4,7 @@ layout: post
 published: true
 title: "Bitdevs NYC Socratic Seminar 132"
 date: 2024-01-25
-type: other
+type: [other]
 tags: [event]
 ---
 RSVPs required! You *MUST* put your first and last name in the RSVP questionnaire. Due to policies at our host location's building, you may be asked for photo ID at the security desk.

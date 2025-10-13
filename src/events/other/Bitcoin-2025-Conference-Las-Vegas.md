@@ -4,7 +4,7 @@ layout: post
 published: true
 title: "Bitcoin 2025 Conference Las Vegas"
 date: 2025-05-27
-type: other
+type: [other]
 tags: [event]
 ---
 Join the world's largest Bitcoin event—Bitcoin 2025, May 27-29 in Las Vegas.

@@ -4,7 +4,7 @@ layout: post
 published: true
 title: "LNZEUS Launch Party @ Pubkey"
 date: 2023-12-08
-type: other
+type: [other]
 tags: [event]
 ---
 ⚡⚡⚡LAUNCH PARTY⚡⚡⚡

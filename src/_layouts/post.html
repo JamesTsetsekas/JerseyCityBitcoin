@@ -5,7 +5,7 @@ layout: 'default.html'
   <div class="Post">
     <h1 class="Post-title">{{ title }}</h1>
     <div class="Post-info">
-      <span>{{ date | customDate }}</span>
+  <span>{{ page.date | customDate }}</span>
       {% if meetup %}
         <span>
           <a href="{{ meetup }}" target="_blank" rel="noopener nofollow">
