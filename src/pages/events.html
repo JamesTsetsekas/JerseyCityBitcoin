@@ -25,7 +25,7 @@ eleventyNavigation:
 </div>
 <div class="Home">
   <div class="Home-posts">
-    <h2 class="Home-posts-title">Other Local Events</h2>
+    <h2 class="Home-posts-title">Other Events</h2>
     {% for event in collections.events | reverse %}
     {% if loop.index <= 10 and event.data.type !="jcbtc" and event.data.published !=false %} <div
       class="Home-posts-post">

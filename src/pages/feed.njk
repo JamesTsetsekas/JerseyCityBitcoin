@@ -52,7 +52,7 @@ metadata:
       {% endif %}
     {% endfor %}
 
-    <!-- Other Local Events -->
+    <!-- Other Events -->
     {% for event in allEvents %}
       {% if event.data.published != false and event.data.type != "jcbtc" %}
         {% set absoluteEventUrl = event.url | absoluteUrl(metadata.url) %}

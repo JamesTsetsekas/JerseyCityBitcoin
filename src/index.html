@@ -16,23 +16,46 @@ eleventyNavigation:
   </p>
 
   <div class="Home-posts">
-    <h2 class="Home-posts-title">{{client.title}} Meetups</h2>
+    <h2 class="Home-posts-title">Jersey City Bitcoin &amp; Beer Meetups</h2>
+    {% set beerCount = 0 %}
     {% for event in collections.events | reverse %}
-    {% if loop.index <= 10 and event.data.type=="jcbtc" and event.data.published !=false %} <div class="Home-posts-post">
+    {% if event.data.type=="jcbtc" and event.data.published !=false and beerCount < 10 %}
+    <div class="Home-posts-post">
       <span class="Home-posts-post-date event-date">{{ event.date | customDate }}</span>
       <span class="Home-posts-post-arrow">&raquo;</span>
       <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
-      {% endif %}
-      {% endfor %}
+      {% set beerCount = beerCount + 1 %}
+    </div>
+    {% endif %}
+    {% endfor %}
   </div>
 
   <div class="Home-posts">
-    <h2 class="Home-posts-title">Other Local Events</h2>
+    <h2 class="Home-posts-title">Jersey City Bitcoin Socratic Seminar Meetups</h2>
+    {% set socraticCount = 0 %}
     {% for event in collections.events | reverse %}
-    {% if loop.index <= 10 and event.data.type !="jcbtc" and event.data.published !=false %} <div class="Home-posts-post">
+    {% if event.data.type=="jcbtc-socratic" and event.data.published !=false and socraticCount < 10 %}
+    <div class="Home-posts-post">
       <span class="Home-posts-post-date event-date">{{ event.date | customDate }}</span>
       <span class="Home-posts-post-arrow">&raquo;</span>
       <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
+      {% set socraticCount = socraticCount + 1 %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="Home-posts">
+    <h2 class="Home-posts-title">Other Events</h2>
+    {% set otherCount = 0 %}
+    {% for event in collections.events | reverse %}
+    {% if event.data.type !="jcbtc" and event.data.type !="jcbtc-socratic" and event.data.published !=false and otherCount < 10 %}
+    <div class="Home-posts-post">
+      <span class="Home-posts-post-date event-date">{{ event.date | customDate }}</span>
+      <span class="Home-posts-post-arrow">&raquo;</span>
+      <a class="Home-posts-post-title" href="{{ event.url }}">{{ event.data.title }}</a>
+      {% set otherCount = otherCount + 1 %}
+    </div>
       {% endif %}
       {% endfor %}
       <p><a href="/events/">See all events</a></p>
