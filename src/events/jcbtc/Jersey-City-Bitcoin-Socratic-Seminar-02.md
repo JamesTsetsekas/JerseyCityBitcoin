@@ -16,9 +16,11 @@ Come join us for our second educational meetup at the Barrow Mansion in Jersey C
 
 In this classroom style event we will discuss some relevant bitcoin news and how you can be involved with our educational mission.
 
-### Event Topics Include
+### 12/18 Event Topics Include:
 
-- TBD
+- ​How Bitcoin Mining Works Part 1: Prerequisites
+- ​Run Your Own Node Guide
+- ​JC Bitcoin Meetup Direction and Ideas
 
 This meetup is designed for bitcoin beginners so don't be shy and please bring your questions!
 
