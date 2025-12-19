@@ -4,7 +4,7 @@ published: true
 type: blog
 tags: [blog, node, bitcoin]
 title: "Running Your Own Node"
-date: 2025-01-15
+date: 2025-01-19
 author: Jersey City Bitcoin
 ---
 
@@ -36,4 +36,5 @@ Running your own Bitcoin node provides several key benefits:
 - **Learning**: Gain hands-on experience with Bitcoin's core technology
 
 If you have questions about running your own node or want to discuss this topic further, join us at our next [Jersey City Bitcoin meetup](https://jerseycitybitcoin.com/events/)!
+
 
