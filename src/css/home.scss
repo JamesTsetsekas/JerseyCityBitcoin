@@ -261,6 +261,74 @@
   }
 }
 
+// ---- EMPTY-STATE POSTER (no upcoming events) ----
+.Poster--empty {
+  display: block;
+  text-align: center;
+
+  &::before { display: none; }
+
+  .Poster-title { margin-bottom: 20px; }
+
+  .Poster-links {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// ---- PAST EVENTS DISCLOSURE (native details/summary, poster-style button) ----
+.PastEvents {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 20px 32px 40px;
+
+  @media (max-width: $mid-screen) {
+    padding: 16px 20px 32px;
+  }
+
+  &-summary {
+    display: inline-block;
+    cursor: pointer;
+    font-family: $font-display;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $accent;
+    background: $surface;
+    border: 2px solid $accent;
+    padding: 16px 40px;
+    list-style: none;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &::-webkit-details-marker { display: none; }
+
+    &:hover,
+    &:focus-visible {
+      background: $accent;
+      color: $bg;
+    }
+  }
+
+  &[open] > &-summary {
+    margin-bottom: 8px;
+  }
+
+  &-year {
+    font-family: $font-display;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $cream;
+    margin: 36px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border;
+  }
+}
+
 // ---- CTA BAND ----
 .CTA {
   text-align: center;
