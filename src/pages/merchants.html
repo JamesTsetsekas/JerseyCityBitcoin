@@ -1,0 +1,90 @@
+---
+layout: 'default.html'
+description: 'Accept Bitcoin at your Jersey City business. Free guides, wallet help, and hands-on setup from your neighborhood Bitcoin community.'
+metaTitle: 'Bitcoin on Main Street'
+title: Merchants
+permalink: 'merchants/'
+eleventyNavigation:
+    key: Merchants
+    order: 450
+---
+<style>
+.Merch { max-width: 1100px; margin: 0 auto; padding: 48px 24px 88px; }
+.Merch-hero h1 { font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: 1px; margin: 0 0 8px; }
+.Merch-hero h1 span { color: #ff9900; }
+.Merch-kicker { font-family: 'JetBrains Mono', monospace; color: #a08862; text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; }
+.Merch-lede { max-width: 720px; font-size: 1.05rem; }
+.Merch h2 { font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; letter-spacing: 1px; border-left: 6px solid #ff9900; padding-left: 12px; margin-top: 48px; }
+.Merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 20px; }
+.Merch-card { background: #1a1810; border: 1px solid #2a2520; border-left: 4px solid #ff9900; padding: 18px; }
+.Merch-card h3 { margin: 0 0 6px; font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; letter-spacing: .5px; font-size: 1rem; }
+.Merch-card p { margin: 0; color: #cfc7b8; font-size: .92rem; }
+.Merch-proof { background: #1a1810; border: 1px solid #2a2520; padding: 20px 24px; margin-top: 20px; }
+.Merch-proof strong { color: #ff9900; }
+.Path { background: #1a1810; border: 1px solid #2a2520; padding: 20px 24px; margin-top: 16px; }
+.Path h3 { font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; margin: 0 0 6px; }
+.Path h3 em { color: #a08862; font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: .75rem; letter-spacing: 1px; margin-left: 10px; }
+.Path p { margin: 6px 0; color: #cfc7b8; font-size: .95rem; }
+.Dl { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #1a1810; border: 1px solid #2a2520; border-left: 4px solid #ff9900; padding: 14px 18px; margin-top: 10px; transition: transform .15s ease; }
+.Dl:hover { transform: translateX(4px); }
+.Dl-name { font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+.Dl-meta { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: #a08862; }
+.Dl a.Dl-btn { background: #ff9900; color: #13120e; font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; text-decoration: none; white-space: nowrap; }
+.Merch-cta { border: 2px solid #ff9900; padding: 24px; margin-top: 48px; text-align: center; }
+.Merch-cta a.btn { display: inline-block; background: #ff9900; color: #13120e; font-family: 'Oswald', system-ui, sans-serif; text-transform: uppercase; letter-spacing: 1px; padding: 12px 26px; text-decoration: none; margin: 12px 6px 0; }
+.Merch-cta a.btn--ghost { background: transparent; color: #ff9900; border: 1px solid #ff9900; }
+.Merch-fine { color: #a08862; font-size: .8rem; margin-top: 32px; }
+@media (max-width: 768px) { .Dl { flex-direction: column; align-items: flex-start; } }
+</style>
+
+<div class="Merch">
+  <div class="Merch-hero">
+    <div class="Merch-kicker">Merchant Onboarding</div>
+    <h1>Bitcoin on <span>Main Street</span></h1>
+    <p class="Merch-lede">Accept payments with lower fees, get paid instantly, and reach new customers, with zero contracts and zero hidden costs. Jersey City Bitcoin helps local businesses start accepting Bitcoin, hands-on and free.</p>
+  </div>
+
+  <h2>Why accept Bitcoin</h2>
+  <div class="Merch-grid">
+    <div class="Merch-card"><h3>Low fees, no minimums</h3><p>Receive payments directly from your customers, much like cash. No middlemen taking hefty processing fees.</p></div>
+    <div class="Merch-card"><h3>Instant settlement</h3><p>Payments settle in seconds. No waiting for your card processor or bank to pay you out.</p></div>
+    <div class="Merch-card"><h3>No chargebacks</h3><p>Payments happen directly between you and your customer. Chargeback fraud is impossible by design.</p></div>
+    <div class="Merch-card"><h3>New customers</h3><p>Get listed free on Bitcoin merchant maps and reach people who want to spend bitcoin locally.</p></div>
+  </div>
+
+  <div class="Merch-proof">
+    <p><strong>It is already happening in Jersey City.</strong> At IQ Coffee, 3-4 customers pay in bitcoin every single day. Nationally, over 800,000 Square merchants across America now accept Bitcoin payments.</p>
+  </div>
+
+  <h2>Three ways to start</h2>
+  <div class="Path">
+    <h3>Square <em>Want dollars, easiest</em></h3>
+    <p>Already on Square? Bitcoin over Lightning is built in: 0% processing fee through Dec 31 2026, then 1%. Choose automatic USD conversion and your bookkeeping does not change. New Jersey is supported.</p>
+  </div>
+  <div class="Path">
+    <h3>BTCPay Server <em>Want bitcoin, sovereign</em></h3>
+    <p>Free, open-source, non-custodial: no processing fees, no KYC, funds land straight in your own wallet. A JC Bitcoin volunteer handles the setup and the Lightning plumbing.</p>
+  </div>
+  <div class="Path">
+    <h3>OpenNode <em>Online stores</em></h3>
+    <p>Bitcoin + Lightning checkout for Shopify, WooCommerce, and web stores, with automatic USD payout to a US bank. OpenNode is a JC Bitcoin sponsor.</p>
+  </div>
+
+  <h2>The Merchant Kit — free downloads</h2>
+  <div class="Dl"><div><div class="Dl-name">Why Accept Bitcoin: The Business Case</div><div class="Dl-meta">PDF · one-pager for the owner on the fence</div></div><a class="Dl-btn" href="/assets/downloads/jc-btc-merchant-overview.pdf" download>Download</a></div>
+  <div class="Dl"><div><div class="Dl-name">How to Accept Bitcoin at the Point of Sale</div><div class="Dl-meta">PDF · Square vs BTCPay vs OpenNode, step by step</div></div><a class="Dl-btn" href="/assets/downloads/how-to-accept-bitcoin-pos.pdf" download>Download</a></div>
+  <div class="Dl"><div><div class="Dl-name">Square Bitcoin Setup Guide</div><div class="Dl-meta">PDF · illustrated click-through with screenshots</div></div><a class="Dl-btn" href="/assets/downloads/square-bitcoin-setup-guide.pdf" download>Download</a></div>
+  <div class="Dl"><div><div class="Dl-name">Bitcoin Wallets for Business</div><div class="Dl-meta">PDF · which wallet fits your business type</div></div><a class="Dl-btn" href="/assets/downloads/bitcoin-wallets-for-business.pdf" download>Download</a></div>
+  <div class="Dl"><div><div class="Dl-name">Merchant FAQ</div><div class="Dl-meta">PDF · plain answers to the common objections</div></div><a class="Dl-btn" href="/assets/downloads/merchant-faq.pdf" download>Download</a></div>
+  <div class="Dl"><div><div class="Dl-name">Bitcoin Accounting Guide</div><div class="Dl-meta">PDF · cost basis and bookkeeping basics</div></div><a class="Dl-btn" href="/assets/downloads/bitcoin-accounting-guide.pdf" download>Download</a></div>
+  <div class="Dl"><div><div class="Dl-name">Bitcoin Tax Overview</div><div class="Dl-meta">PDF · what accepting bitcoin means at tax time</div></div><a class="Dl-btn" href="/assets/downloads/bitcoin-tax-overview.pdf" download>Download</a></div>
+
+  <div class="Merch-cta">
+    <h2 style="border: none; padding: 0; margin: 0;">Want a hand? We do this for free.</h2>
+    <p>Volunteers from the meetup will walk your setup end to end, from wallet to first sale.</p>
+    <a class="btn" href="/contact-us/">Contact us</a>
+    <a class="btn btn--ghost" href="https://luma.com/user/usr-Mu6rRjVWwUw3XVK" target="_blank" rel="noopener">Come to a meetup</a>
+  </div>
+
+  <p class="Merch-fine">Educational purposes only, not financial or tax advice. Payment products change quickly; verify current terms with each provider before setup.</p>
+</div>
