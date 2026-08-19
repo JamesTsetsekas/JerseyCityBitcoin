@@ -11,6 +11,10 @@ const sass = require("sass");
 // Adding Autoprefixing and Minification with LightningCSS
 const browserslist = require("browserslist");
 const { transform, browserslistToTargets } = require("lightningcss");
+const {
+  SITE_TIME_ZONE,
+  dateKeyInTimeZone,
+} = require('./src/assets/js/upcoming-events');
 
 // allows the use of {% image... %} to create responsive, optimised images
 // CHANGE DEFAULT MEDIA QUERIES AND WIDTHS
@@ -107,7 +111,60 @@ module.exports = function (eleventyConfig) {
       './src/events/*/*.md'
     ]);
   });
-  
+
+  // Shared helpers for the merged upcoming/past event collections.
+  // Published events only; every event file carries a `date` in frontmatter.
+  function getPublishedEvents(collection) {
+    return collection.getFilteredByGlob([
+      './src/events/*.md',
+      './src/events/*/*.md'
+    ]).filter((item) => item.data.published !== false && item.date);
+  }
+  // Event dates are stored as UTC midnight. Resolve "today" in Jersey City's
+  // timezone so builds behave the same locally and on UTC-based hosts.
+  function startOfTodayUTC() {
+    const [year, month, day] = dateKeyInTimeZone(
+      new Date(),
+      SITE_TIME_ZONE
+    ).split('-').map(Number);
+    return Date.UTC(year, month - 1, day);
+  }
+
+  // Merged upcoming events: all types together, today-or-later, soonest first.
+  eleventyConfig.addCollection('upcomingEvents', function (collection) {
+    const cutoff = startOfTodayUTC();
+    return getPublishedEvents(collection)
+      .filter((item) => item.date.getTime() >= cutoff)
+      .sort((a, b) => a.date - b.date);
+  });
+
+  // Merged past events: all types together, most recent first (used for the count).
+  eleventyConfig.addCollection('pastEvents', function (collection) {
+    const cutoff = startOfTodayUTC();
+    return getPublishedEvents(collection)
+      .filter((item) => item.date.getTime() < cutoff)
+      .sort((a, b) => b.date - a.date);
+  });
+
+  // Past events grouped by year (descending), for the archive disclosure.
+  eleventyConfig.addCollection('pastEventsByYear', function (collection) {
+    const cutoff = startOfTodayUTC();
+    const past = getPublishedEvents(collection)
+      .filter((item) => item.date.getTime() < cutoff)
+      .sort((a, b) => b.date - a.date);
+    const groups = [];
+    for (const item of past) {
+      const year = item.date.getUTCFullYear();
+      let group = groups[groups.length - 1];
+      if (!group || group.year !== year) {
+        group = { year: year, events: [] };
+        groups.push(group);
+      }
+      group.events.push(item);
+    }
+    return groups;
+  });
+
   // adds the RSS plugin
   eleventyConfig.addPlugin(pluginRss, {
     posthtmlRenderOptions: {
@@ -149,8 +206,22 @@ module.exports = function (eleventyConfig) {
   
     const formattedDateWithoutComma = formattedDate.replace(',', '');
     const [month, day, year] = formattedDateWithoutComma.split(' ');
-  
+
     return `${day} ${month} ${year}`;
+  });
+
+  // Maps an event's `type` frontmatter to its existing poster label. Keeps the
+  // merged event lists using the same wording the separate lists used before.
+  eleventyConfig.addFilter('eventTypeLabel', function (type) {
+    if (type === 'jcbtc') return 'Bitcoin & Beer Meetup';
+    if (type === 'jcbtc-socratic') return 'Socratic Seminar';
+    return 'Event';
+  });
+
+  // Machine-readable event date for reliable client-side stale-card checks.
+  eleventyConfig.addFilter('eventDateISO', function (dateString) {
+    const date = new Date(dateString);
+    return Number.isNaN(date.getTime()) ? '' : date.toISOString().slice(0, 10);
   });
 
 
