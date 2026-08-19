@@ -8,11 +8,15 @@ eleventyNavigation:
     key: Events
     order: 300
 ---
-<div class="Home">
+<div class="Page">
+  <header class="Page-header">
+    <h1 class="Page-title">Events</h1>
+    <p class="Page-intro">Jersey City Bitcoin meetups, Socratic seminars, and other community events.</p>
+  </header>
 
   <!-- UPCOMING EVENTS (merged: all types, soonest first, today-or-later) -->
-  <section class="Section">
-    <h2 class="Section-header">Upcoming</h2>
+  <section class="Page-section" aria-labelledby="upcoming-events">
+    <h2 class="Page-section-title" id="upcoming-events">Upcoming</h2>
     <div class="Posters">
     {% if collections.upcomingEvents | length %}
       {% for event in collections.upcomingEvents %}
