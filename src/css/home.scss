@@ -177,6 +177,8 @@
   transition: transform 0.2s ease, border-color 0.2s ease;
   color: $cream;
 
+  &[hidden] { display: none; }
+
   &::before {
     content: '';
     position: absolute;
@@ -291,7 +293,8 @@
   }
 
   &-summary {
-    display: inline-block;
+    display: list-item;
+    width: fit-content;
     cursor: pointer;
     font-family: $font-display;
     font-size: 14px;
@@ -302,10 +305,7 @@
     background: $surface;
     border: 2px solid $accent;
     padding: 16px 40px;
-    list-style: none;
     transition: background 0.15s ease, color 0.15s ease;
-
-    &::-webkit-details-marker { display: none; }
 
     &:hover,
     &:focus-visible {

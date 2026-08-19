@@ -11,6 +11,10 @@ const sass = require("sass");
 // Adding Autoprefixing and Minification with LightningCSS
 const browserslist = require("browserslist");
 const { transform, browserslistToTargets } = require("lightningcss");
+const {
+  SITE_TIME_ZONE,
+  dateKeyInTimeZone,
+} = require('./src/assets/js/upcoming-events');
 
 // allows the use of {% image... %} to create responsive, optimised images
 // CHANGE DEFAULT MEDIA QUERIES AND WIDTHS
@@ -116,11 +120,14 @@ module.exports = function (eleventyConfig) {
       './src/events/*/*.md'
     ]).filter((item) => item.data.published !== false && item.date);
   }
-  // Start of "today" as UTC midnight of the local calendar date. Event dates are
-  // stored as UTC midnight, so an event dated today compares as equal (today-or-later).
+  // Event dates are stored as UTC midnight. Resolve "today" in Jersey City's
+  // timezone so builds behave the same locally and on UTC-based hosts.
   function startOfTodayUTC() {
-    const now = new Date();
-    return Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const [year, month, day] = dateKeyInTimeZone(
+      new Date(),
+      SITE_TIME_ZONE
+    ).split('-').map(Number);
+    return Date.UTC(year, month - 1, day);
   }
 
   // Merged upcoming events: all types together, today-or-later, soonest first.
@@ -209,6 +216,12 @@ module.exports = function (eleventyConfig) {
     if (type === 'jcbtc') return 'Bitcoin & Beer Meetup';
     if (type === 'jcbtc-socratic') return 'Socratic Seminar';
     return 'Event';
+  });
+
+  // Machine-readable event date for reliable client-side stale-card checks.
+  eleventyConfig.addFilter('eventDateISO', function (dateString) {
+    const date = new Date(dateString);
+    return Number.isNaN(date.getTime()) ? '' : date.toISOString().slice(0, 10);
   });
 
 

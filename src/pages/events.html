@@ -17,20 +17,18 @@ eleventyNavigation:
   <!-- UPCOMING EVENTS (merged: all types, soonest first, today-or-later) -->
   <section class="Page-section" aria-labelledby="upcoming-events">
     <h2 class="Page-section-title" id="upcoming-events">Upcoming</h2>
-    <div class="Posters">
-    {% if collections.upcomingEvents | length %}
-      {% for event in collections.upcomingEvents %}
+    <div class="Posters" data-upcoming-events>
+    {% for event in collections.upcomingEvents %}
       <a class="Poster" href="{{ event.url }}">
-        <span class="Poster-date event-date">{{ event.date | customDate }}</span>
+        <span class="Poster-date event-date" data-event-date="{{ event.date | eventDateISO }}">{{ event.date | customDate }}</span>
         <span class="Poster-info">
           <span class="Poster-type">{{ event.data.type | eventTypeLabel }}</span>
           <span class="Poster-title">{{ event.data.title }}</span>
         </span>
         <span class="Poster-cta">View &rarr;</span>
       </a>
-      {% endfor %}
-    {% else %}
-      <div class="Poster Poster--empty">
+    {% endfor %}
+      <div class="Poster Poster--empty" data-upcoming-empty{% if collections.upcomingEvents | length %} hidden{% endif %}>
         <span class="Poster-info">
           <span class="Poster-type">Upcoming</span>
           <span class="Poster-title">No events scheduled right now. Check back soon.</span>
@@ -39,7 +37,6 @@ eleventyNavigation:
           <a class="Poster-cta" href="{{ client.meetup }}" target="_blank" rel="noopener">RSVP on Luma &rarr;</a>
         </span>
       </div>
-    {% endif %}
     </div>
   </section>
 
@@ -67,21 +64,4 @@ eleventyNavigation:
 
 </div>
 
-<script>
-  // Client-side guard: hide any Upcoming card whose date has since passed on a
-  // stale build. Archive cards inside the disclosure carry no `event-date`
-  // class, so they are intentionally left untouched.
-  (function () {
-    var cutoff = new Date();
-    cutoff.setHours(0, 0, 0, 0);
-    cutoff.setDate(cutoff.getDate() - 1);
-
-    document.querySelectorAll('.event-date').forEach(function (element) {
-      var eventDate = new Date(element.textContent.trim());
-      if (!isNaN(eventDate.getTime()) && eventDate < cutoff) {
-        var card = element.closest('.Poster');
-        if (card) card.style.display = 'none';
-      }
-    });
-  })();
-</script>
+<script src="/assets/js/upcoming-events.js" defer></script>
